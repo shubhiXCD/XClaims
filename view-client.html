@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <title>STRATA COMMUNITY INSURANCE</title>
+    <link href="css/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="MyCtrl">
+    <script type='text/javascript'>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('MyCtrl', function($scope) {
+        $scope.setFile = function(element) {
+            $scope.$apply(function($scope) {
+                $scope.theFile = element.files[0];
+                $scope.sizeDis = false;
+            });
+        };
+    });
+    </script>
+    <!--********* Header Starts *********-->
+     <div class="header">
+        <div class="navbar main-top">
+            <div class="cs-nav">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <div class="mobile-button pull-right">
+                            <a href="javascript:void(0)" class="navbar-toggler sidebar-large" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"><span class="icon"></span></a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-left ml-4">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle legitRipple btn-notification" data-toggle="dropdown">
+                            <i class="icon-bell3"></i>
+                            <span class="position-right"><span class="hide-xs">Notifications</span> <i class="caret"></i> </span>
+                            <span class="badge bg-warning-400">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-content width-350 dropdown-notification">
+                            <ul class="media-list dropdown-content-body">
+                                <li class="media">
+                                    <div class="media-body">
+                                        Quote Number <a href="create-quote-view.html" class="text-semibold">QCH12456</a> expires on 25/05/2019.
+                                        <div class="media-annotation">May 25, 12:47</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Method changed successfully for <a href="view-client.html" class="text-semibold"> Christopher Wallace </a>
+                                        <div class="media-annotation">May 13, 10:25</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Due on June 16 2016 for Policy Number <a href="view-policy.html" class="text-semibold">POL123456</a>
+                                        <div class="media-annotation"> May 12, 09:37</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-content-footer">
+                                <a href="#" data-popup="tooltip" title="" data-original-title="All Notifications"><i class="icon-menu display-block"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user">
+                        <a class="dropdown-toggle btn btn-primary-outline btn-header" data-toggle="dropdown">
+                            <span>Hi, <span class="hide-xs">Nathan Jacobson</span></span>
+                            <i class="caret"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="login.html"><i class="icon-switch2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--********* End Header *********-->
+    <!--********* Page Container Start *********-->
+    <div class="page-container">
+        <!-- Page content -->
+        <div class="page-content">
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+                    <a class="navbar-brand logo logo-white" href="index.html">
+                        <img src="assets/images/logo.png" class="logo-full">
+                    </a>
+                    <ul class="navigation navigation-main navigation-accordion">
+                        <li><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
+                        <li class="active-page"><a href="#" class="has-ul"><i class="icon-user-tie"></i> <span>Client Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-client.html"><span>Search Client</span></a></li>
+                                <li><a href="add-client.html"><span>Add New Client</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="has-ul"><i class="icon-profile"></i> <span>Claim Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-claim.html"><span>Search Claim</span></a></li>
+                                <li><a href="claim.html"><span>Make a Claim</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="search-policy.html"><i class="icon-search4"></i> <span>Search Policy</span></a></li>
+                        <li><a><i class="icon-credit-card"></i> <span>Make a Payment</span></a></li>
+                        <li><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Create New Quote</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+                <div class="page-title">
+                    <ul class="breadcrumb breadcrumb-caret">
+                        <li><a href="search-client.html">Search Client</a></li>
+                        <li class="active">View Client Details</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-sm-9 col-md-9 col-lg-10">
+                        <div class="panel panel-body no-header">
+                            <form class="form form-horizontal" action="#">
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Type of Client</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    Individual
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Client Code</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    <div class="position-relative field-md">
+                                                        CL123458
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">First Name</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    William
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Last Name</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    Jack
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Date Of Birth Team</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    22/05/1988
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-divider form-title-2"><span>Contact Details</span></div>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Phone</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    (541) 111-2222
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Fax</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    (541) 111-2222
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Email</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    william.jack@abc.com
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Website URL</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    www.abc.com
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-divider form-title-2"><span>Address</span></div>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Address</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    14 Perth Street, ABERDEEN, NSW, 2336 3EQ, Australia
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="form-group text-right">
+                            <a href="search-client.html" class="btn btn-primary btn-search"> <i class="icon-arrow-left8 mr-half font-medium-1"></i> Back To Search</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-2">
+                        <div class="fixed-panel-right" id="rightbar">
+                            <a href="edit-client.html" class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-pencil7 font-small-3 mr-1 "></i> Edit Details </a>
+                            <a href="create-quote.html" class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-clipboard2 font-small-3 mr-1 "></i> Add Quote </a>
+                            <a href="claim.html" class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-profile font-small-3 mr-1 "></i> Make a Claim </a>
+                            <a href="add-client.html" data-toggle="modal" data-target="#activate-broker" class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-user-block font-medium-2 mr-1 "></i> Disable </a>
+                            <a href="search-client.html" class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-arrow-left8 font-small-2 mr-1 "></i> Back to Search </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /main content -->
+        </div>
+        <!-- /page content -->
+    </div>
+    <!--************ End Page Container *********-->
+    <div id="activate-broker" class="modal fade moda-sm">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert-warning-center text-center">
+                        <a href="#" class="icon"><i class="icon-info3"></i></a>
+                        <p class="text-semibold mb-4 font-medium-3">Are you sure you want to disable this customer?</p>
+                        <a href="add-new-user.html" class="btn btn-grey-outline" data-dismiss="modal">No</a>
+                        <a href="search-client.html" class="btn btn-primary">Yes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STRATA COMMUNITY INSURANCE</title>
+    <link href="css/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="MyCtrl" class="bg-white sidebar-xs">
+    <script type='text/javascript'>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('MyCtrl', function($scope) {
+        $scope.setFile = function(element) {
+            $scope.$apply(function($scope) {
+                $scope.theFile = element.files[0];
+                $scope.sizeDis = false;
+            });
+        };
+    });
+    </script>
+    <!--********* Header Starts *********-->
+     <div class="header">
+        <div class="navbar main-top">
+            <div class="cs-nav">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <div class="mobile-button pull-right">
+                            <a href="javascript:void(0)" class="navbar-toggler sidebar-large" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"><span class="icon"></span></a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-left ml-4">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle legitRipple btn-notification" data-toggle="dropdown">
+                            <i class="icon-bell3"></i>
+                            <span class="position-right"><span class="hide-xs">Notifications</span> <i class="caret"></i> </span>
+                            <span class="badge bg-warning-400">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-content width-350 dropdown-notification">
+                            <ul class="media-list dropdown-content-body">
+                                <li class="media">
+                                    <div class="media-body">
+                                        Quote Number <a href="create-quote-view.html" class="text-semibold">QCH12456</a> expires on 25/05/2019.
+                                        <div class="media-annotation">May 25, 12:47</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Method changed successfully for <a href="view-client.html" class="text-semibold"> Christopher Wallace </a>
+                                        <div class="media-annotation">May 13, 10:25</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Due on June 16 2016 for Policy Number <a href="view-policy.html" class="text-semibold">POL123456</a>
+                                        <div class="media-annotation"> May 12, 09:37</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-content-footer">
+                                <a href="#" data-popup="tooltip" title="" data-original-title="All Notifications"><i class="icon-menu display-block"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user">
+                        <a class="dropdown-toggle btn btn-primary-outline btn-header" data-toggle="dropdown">
+                            <span>Hi, <span class="hide-xs">Nathan Jacobson</span></span>
+                            <i class="caret"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="login.html"><i class="icon-switch2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--********* End Header *********-->
+    <!--********* Page Container Start *********-->
+    <div class="page-container">
+        <!-- Page content -->
+        <div class="page-content">
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+                    <a class="navbar-brand logo logo-white" href="index.html">
+                        <img src="assets/images/logo.png" class="logo-full">
+                    </a>
+                    <ul class="navigation navigation-main navigation-accordion">
+                        <li><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
+                        <li><a href="#" class="has-ul"><i class="icon-user-tie"></i> <span>Client Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-client.html"><span>Search Client</span></a></li>
+                                <li><a href="add-client.html"><span>Add New Client</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="active-page"><a href="#" class="has-ul"><i class="icon-profile"></i> <span>Claim Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-claim.html"><span>Search Claim</span></a></li>
+                                <li><a href="claim.html"><span>Make a Claim</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="search-policy.html"><i class="icon-search4"></i> <span>Search Policy</span></a></li>
+                        <li><a><i class="icon-credit-card"></i> <span>Make a Payment</span></a></li>
+                        <li><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Create New Quote</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+                <form class="form form-horizontal" action="#">
+                    <div class="content-block">
+                        <div class="row no-pad create-quote">
+                            <div class="col-sm-9 col-md-10">
+                                <div class="page-title">
+                    <ul class="breadcrumb breadcrumb-caret">
+                        <li><a href="search-claim.html">Search Claim</a></li>
+                        <li class="active">View Claim Details</li>
+                    </ul>
+                </div>
+                                <div class="panel panel-body no-header">
+                                    <form class="form form-horizontal ng-pristine ng-valid" action="#">
+                                        <div class="form-body">
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Claim Number</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            CL54689
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Client Name</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            William Jack
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half"> Client Code</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            <div class="position-relative field-md">
+                                                                CL125461
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half"> Policy Number</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            POL25461
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Reported By</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            Kelly
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Adjuster Name</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            James Thomas
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Status</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            <span class="label status-label bg-orange">Underwriting</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">GST Number</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            856498875452
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-divider form-title-2"><span>LOSS SUMMARY</span></div>
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Date of Intimation</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            20/05/2019
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Date Of Loss</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            08/05/2019
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Time Of Loss</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            10:50am
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Amount Paid</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            $2,894
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Nature of Loss</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            Flood
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Cause of Loss</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            Lorem Ipsum
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-10">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-3 label-control pt-half">Loss Description</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            isi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-divider form-title-2"><span>BANK ACCOUNT DETAILS</span></div>
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Account Name</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            William Jack
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">BSB</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            032000
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Account Number</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            05874556896
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-divider form-title-2"><span>Risk Address</span></div>
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                                    <div class="form-group clearfix">
+                                                        <label class="col-sm-4 col-lg-5 label-control pt-half">Risk Address</label>
+                                                        <div class="col-sm-8 col-lg-7">
+                                                            14 Perth Street, ABERDEEN, NSW, 2336 3EQ, Australia
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tabbable">
+                                        <ul class="nav nav-tabs nav-tabs-bottom mb-3">
+                                            <li><a class="active" href="#bottom-justified-tab1" data-toggle="tab">Notes and Attachments</a></li>
+                                            <li><a href="#bottom-justified-tab2" data-toggle="tab">Documents</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="bottom-justified-tab1">
+                                                <div class="bg-light-grey p-2">
+                                                    <div class="question">
+                                                        <div class="form-group clearfix">
+                                                            <div class="col-sm-12">
+                                                                <ul class="list-feed no-style">
+                                                                    <li>
+                                                                        <div class="text-muted">March 12, 12:47</div>
+                                                                        <a href="#">David Linner</a> requested bla bla bla bla...
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="text-muted">April 22, 16:14</div>
+                                                                        <a href="#">David Linner</a> says bla bla bla bla...
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="question">
+                                                        <div class="form-group clearfix">
+                                                            <div class="col-sm-12 mb-2">
+                                                                <textarea class="form-control" placeholder="Add Notes"></textarea>
+                                                            </div>
+                                                            <div class="table-responsive col-md-12">
+                                                                <table class="table table-striped white-space-normal ">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>S.No.</th>
+                                                                            <th>Description</th>
+                                                                            <th width="20%">Attachment</th>
+                                                                            <th> Action </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>
+                                                                                Occaecat cupidatat non
+                                                                            </td>
+                                                                            <td>
+                                                                                <a class="text-semibold">Attachment-1.jpg</a>
+                                                                            </td>
+                                                                            <td>
+                                                                                <a title="Delete" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-trash font-small-2"></i> Delete </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2</td>
+                                                                            <td>
+                                                                                <textarea class="form-control" rows="2" cols="18"></textarea>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="file-upload btn btn-primary btn-sm"> <span>
+                                                                                        <i class="icon-attachment"></i>
+                                                                                        Upload</span>
+                                                                                    <input class="upload" type="file">
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <a title="Add" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-plus2 font-small-2 mr-half"></i> Add </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="text-right">
+                                                                <a href="#" class="btn btn-sm btn-primary-outline"> <i class="icon-plus2 mr-half font-medium-1"></i> Add Note </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="bottom-justified-tab2">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Document Name </th>
+                                                                <th>Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><a href="#" class="text-semibold"><i class="icon-file-pdf mr-half"></i> Document 1.pdf</a></td>
+                                                                <td>
+                                                                    <a title="Delete" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-trash font-small-2 mr-1"></i> Delete </a>
+                                                                    <a title="View" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-eye font-small-2 mr-1"></i> View </a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><a href="#" class="text-semibold"><i class="icon-file-word mr-half"></i> Document 1.doc</a></td>
+                                                                <td>
+                                                                    <a title="Delete" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-trash font-small-2 mr-1"></i> Delete </a>
+                                                                    <a title="View" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-eye font-small-2 mr-1"></i> View </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-right">
+                                    <a href="search-claim.html" class="btn btn-primary"> <i class="icon-arrow-left8 font-small-2 mr-1 "></i> Back to Search </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-lg-2 stickWidth">
+                                <div class="right-fixed-panel">
+                                    <div class="mb-4">
+                                        <a class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-cross2 font-medium-1 mr-1"></i> Close Claim </a>
+                                        <a href="claim.html" class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-profile font-medium-1 mr-1 "></i> New Claim </a>
+                                        <a href="view-policy.html" class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-clipboard2 font-medium-1 mr-1 "></i> View Policy </a>
+                                        <a href="search-claim.html" class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-arrow-left8 font-small-2 mr-1 "></i> Back to Search </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- /main content -->
+            </div>
+            <!-- /page content -->
+        </div>
+        <!--************ End Page Container *********-->
+        <script type="text/javascript">
+        $(function() {
+
+            if ($(window).width() > 768) {
+                var sidebar = $('.right-fixed-panel');
+                var top = sidebar.offset().top;
+                var sidebarWidth = $('.stickWidth').width();
+                var lastScrollTop = 0
+                $(window).scroll(function(event) {
+                    var y = $(this).scrollTop();
+                    if (y >= 5) {
+                        sidebar.addClass('sticky');
+                        var sidebarWidth = $('.stickWidth').width();
+                        sidebar.css({ width: sidebarWidth + "px " });
+                    } else {
+                        sidebar.removeClass('sticky');
+                        sidebar.css({ width: 'auto' });
+                    }
+                });
+            }
+        });
+        </script>
+        <div id="cancel-policy" class="modal fade moda-sm ">
+            <div class="modal-dialog modal-sm ">
+                <div class="modal-content ">
+                    <div class="modal-header ">
+                        <button type="button " class="close " data-dismiss="modal ">×</button>
+                        <h5 class="modal-title ">Cancel Policy</h5>
+                    </div>
+                    <div class="modal-body ">
+                        <form class="form" action="#">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group clearfix">
+                                            <label class="col-sm-12 label-control">Cancellation Reason</label>
+                                            <div class="col-sm-12">
+                                                <select class="form-control field-sm">
+                                                    <option disabled="" selected="" value="Select">Select</option>
+                                                    <option>Product unsuitable / misunderstood</option>
+                                                    <option>Product too expensive</option>
+                                                    <option>Alternative product purchased</option>
+                                                    <option>Cover overlapped with pre-existing cover</option>
+                                                    <option>Product cancelled within cooling off period</option>
+                                                    <option>Poor service/complaint</option>
+                                                    <option>Cover no longer required</option>
+                                                    <option>Cancelled by Insured </option>
+                                                    <option>Not known</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group clearfix">
+                                            <label class="col-sm-12 label-control">Cancellation Cover Start Date</label>
+                                            <div class="col-sm-12">
+                                                <div class="form-group has-feedback has-feedback-left field-sm mb-0">
+                                                    <input type="text" class="form-control ui-autocomplete-input" placeholder="DD/MM/YYYY">
+                                                    <div class="form-control-feedback">
+                                                        <i class="icon-calendar text-blue"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer ">
+                        <a class="btn btn-grey-outline" data-dismiss="modal">Close</a>
+                        <a class="btn btn-primary delete-tab-btn" data-dismiss="modal" ng-click="deleteProduct=true">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

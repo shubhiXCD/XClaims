@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <title>STRATA COMMUNITY INSURANCE</title>
+    <link href="css/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="MyCtrl">
+    <script type='text/javascript'>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('MyCtrl', function($scope) {
+        $scope.setFile = function(element) {
+            $scope.$apply(function($scope) {
+                $scope.theFile = element.files[0];
+                $scope.sizeDis = false;
+                $scope.showHideTest = false;
+            });
+        };
+    });
+    </script>
+    <!--********* Header Starts *********-->
+     <div class="header">
+        <div class="navbar main-top">
+            <div class="cs-nav">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <div class="mobile-button pull-right">
+                            <a href="javascript:void(0)" class="navbar-toggler sidebar-large" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"><span class="icon"></span></a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-left ml-4">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle legitRipple btn-notification" data-toggle="dropdown">
+                            <i class="icon-bell3"></i>
+                            <span class="position-right"><span class="hide-xs">Notifications</span> <i class="caret"></i> </span>
+                            <span class="badge bg-warning-400">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-content width-350 dropdown-notification">
+                            <ul class="media-list dropdown-content-body">
+                                <li class="media">
+                                    <div class="media-body">
+                                        Quote Number <a href="create-quote-view.html" class="text-semibold">QCH12456</a> expires on 25/05/2019.
+                                        <div class="media-annotation">May 25, 12:47</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Method changed successfully for <a href="view-client.html" class="text-semibold"> Christopher Wallace </a>
+                                        <div class="media-annotation">May 13, 10:25</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Due on June 16 2016 for Policy Number <a href="view-policy.html" class="text-semibold">POL123456</a>
+                                        <div class="media-annotation"> May 12, 09:37</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-content-footer">
+                                <a href="#" data-popup="tooltip" title="" data-original-title="All Notifications"><i class="icon-menu display-block"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user">
+                        <a class="dropdown-toggle btn btn-primary-outline btn-header" data-toggle="dropdown">
+                            <span>Hi, <span class="hide-xs">Nathan Jacobson</span></span>
+                            <i class="caret"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="login.html"><i class="icon-switch2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--********* End Header *********-->
+    <!--********* Page Container Start *********-->
+    <div class="page-container">
+        <!-- Page content -->
+        <div class="page-content">
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+                    <a class="navbar-brand logo logo-white" href="index.html">
+                        <img src="assets/images/logo.png" class="logo-full">
+                    </a>
+                    <ul class="navigation navigation-main navigation-accordion">
+                        <li><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
+                        <li class="active-page"><a href="#" class="has-ul"><i class="icon-user-tie"></i> <span>Client Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-client.html"><span>Search Client</span></a></li>
+                                <li><a href="add-client.html"><span>Add New Client</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="has-ul"><i class="icon-profile"></i> <span>Claim Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-claim.html"><span>Search Claim</span></a></li>
+                                <li><a href="claim.html"><span>Make a Claim</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="search-policy.html"><i class="icon-search4"></i> <span>Search Policy</span></a></li>
+                        <li><a><i class="icon-credit-card"></i> <span>Make a Payment</span></a></li>
+                        <li><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Create New Quote</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+                <div class="page-title">
+                    <ul class="breadcrumb breadcrumb-caret">
+                        <li>Search Client</li>
+                    </ul>
+                </div>
+                <div class="panel panel-body no-header">
+                    <form class="form form-horizontal" action="#">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-2 col-lg-2 label-control">Search By</label>
+                                        <div class="col-sm-8 col-lg-10 pt-1">
+                                            <div class="pretty p-default p-round p-smooth">
+                                                <input type="radio" name="search-client" ng-model="showHideTest" ng-value="true" />
+                                                <div class="state p-primary">
+                                                    <label>Client Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="pretty p-default p-round p-smooth">
+                                                <input type="radio" name="search-client" ng-model="showHideTest" ng-value="false" />
+                                                <div class="state p-primary">
+                                                    <i class="icon mdi mdi-check"></i>
+                                                    <label>Client Code</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-6" ng-show="showHideTest == true">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Client Name</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <input type="text" class="form-control field-md" placeholder="" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6" ng-show="showHideTest == false">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Client Code</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <input type="text" class="form-control field-md" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-group text-right">
+                    <a href="#" class="btn btn-grey-outline btn-reset"> <i class="icon-reset font-medium-3 mr-1"></i> Reset </a>
+                    <a href="#" class="btn btn-primary btn-search"> <i class="icon-search4 mr-half font-medium-1"></i> Search</a>
+                </div>
+                <div class="search-result-table mt-8" style="display:none;">
+                    <div class="table-responsive mb-4">
+                        <table class="table table-striped search-user-table">
+                            <thead>
+                                <tr>
+                                    <th>Client Name</th>
+                                    <th>Client Code</th>
+                                    <th>Phone</th>
+                                    <th>Email ID</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>William Jack</td>
+                                    <td><a href="view-client.html" class="text-semibold">CL125461</a></td>
+                                    <td>(541) 111-2222</td>
+                                    <td>william.jack@abc.com</td>
+                                    <td><span class="label status-label bg-info">Active</span></td>
+                                    <td>
+                                        <ul class="icons-list">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="icon-menu4"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a href="view-client.html"><i class="icon-eye pull-right"></i> View </a></li>
+                                                    <li><a href="edit-client.html"><i class="icon-pencil7 pull-right"></i> Edit </a></li>
+                                                    <li><a href="create-quote.html"><i class="icon-clipboard2 pull-right"></i> Add Quote </a></li>
+                                                    <li><a href="claim.html"><i class="icon-profile pull-right"></i> Make a Claim </a></li>
+                                                    <li><a data-toggle="modal" data-target="#activate-broker"><i class="icon-user-block pull-right"></i> Disable/Delete </a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading mb-0">
+                            <h5 class="panel-title">Open Policies</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Policy No.</th>
+                                            <th>Product</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="view-policy.html" class="text-semibold">POL12548</a></td>
+                                            <td>Commercial Strata</td>
+                                            <td>01/07/2019</td>
+                                            <td>30/06/2022</td>
+                                            <td><span class="label status-label bg-success">Bound</span></td>
+                                            <td>
+                                                <ul class="icons-list">
+                                                    <li class="dropdown">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                            <i class="icon-menu4"></i>
+                                                        </a>
+                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                            <li><a href="view-policy.html"><i class="icon-eye pull-right"></i>View</a></li>
+                                                            <li><a href="#"><i class="icon-credit-card pull-right"></i> Manage Payments</a></li>
+                                                            <li><a href="endorse.html"><i class="icon-pencil7 pull-right"></i> Endorse</a></li>
+                                                            <li><a href="view-policy.html" data-toggle="modal" data-target="#cancel-policy"><i class="icon-cross3 pull-right"></i> Cancel</a></li>
+                                                            <li><a><i class="icon-rotate-cw3 pull-right"></i> Renew Policy</a></li>
+                                                            <li><a href="claim.html"><i class="icon-profile pull-right"></i> Make a Claim </a></li>
+                                                            <li><a data-toggle="modal" data-target="#download-documents-policy"><i class="icon-files-empty pull-right"></i> Policy Documents</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading mb-0">
+                            <h5 class="panel-title">Open Quotes</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Quote No.</th>
+                                            <th>Product</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="create-quote-view.html" class="text-semibold">QU214567</a></td>
+                                            <td>Residental Strata</td>
+                                            <td>01/07/2019</td>
+                                            <td>30/06/2022</td>
+                                            <td><span class="label status-label bg-dark-grey">New Quote</span></td>
+                                            <td>
+                                                <ul class="icons-list">
+                                                    <li class="dropdown">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                            <i class="icon-menu4"></i>
+                                                        </a>
+                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                            <li><a href="create-quote-view.html"><i class="icon-eye pull-right"></i>View</a></li>
+                                                            <li><a href="create-quote-edit.html"><i class="icon-pencil7 pull-right"></i> Edit</a></li>
+                                                            <li><a href="mannual-referral.html"><i class="icon-transmission pull-right"></i> Refer</a></li>
+                                                            <li><a href="premium-resident.html"><i class="icon-cart4 pull-right"></i> Bind</a></li>
+                                                            <li><a href="#" data-toggle="modal" data-target="#discard-change"><i class="icon-bin pull-right"></i> Discard </a></li>
+                                                            <li><a data-toggle="modal" data-target="#download-documents-quote"><i class="icon-files-empty pull-right"></i> Quote Documents</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading mb-0">
+                            <h5 class="panel-title">Claims History</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive mb-4">
+                                <table class="table table-striped search-user-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Claim Nummber</th>
+                                            <th>Policy Number</th>
+                                            <th>Claim Date</th>
+                                            <th>Amount Paid</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="claim-summary.html" class="text-semibold">CL85697</a></td>
+                                            <td><a href="view-policy.html" class="text-semibold">POL25461</a></td>
+                                            <td>22/08/2018</td>
+                                            <td>$1,260</td>
+                                            <td><span class="label status-label bg-success">Closed</span></td>
+                                            <td>
+                                                <ul class="icons-list">
+                                                    <li class="dropdown">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                            <i class="icon-menu4"></i>
+                                                        </a>
+                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                            <li><a href="claim-summary.html"><i class="icon-eye pull-right"></i> View Summary </a></li>
+                                                            <li><a href="claim.html"><i class="icon-folder-open3 pull-right"></i> Reopen Claim </a></li>
+                                                            <li><a data-toggle="modal" data-target="#download-documents"><i class="icon-files-empty pull-right"></i> Claim Documents</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="claim-summary.html" class="text-semibold">CL54689</a></td>
+                                            <td><a href="view-policy.html" class="text-semibold">POL25461</a></td>
+                                            <td>05/10/2018</td>
+                                            <td>$2,894</td>
+                                            <td><span class="label status-label bg-orange">Underwriting</span></td>
+                                            <td>
+                                                <ul class="icons-list">
+                                                    <li class="dropdown">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                            <i class="icon-menu4"></i>
+                                                        </a>
+                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                            <li><a href="claim-summary.html"><i class="icon-eye pull-right"></i> View Summary </a></li>
+                                                            <li><a><i class="icon-cross3 pull-right"></i> Close Claim </a></li>
+                                                            <li><a data-toggle="modal" data-target="#download-documents"><i class="icon-files-empty pull-right"></i> Claim Documents</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(".btn-search").click(function() {
+                    $(".search-result-table").css("display", "block");
+                });
+                $(".btn-reset").click(function() {
+                    $(".search-result-table").css("display", "none");
+                });
+                </script>
+                <script>
+                    $(function() {
+                    $('#example').dataTable({
+                        "bPaginate": true,
+                        "bAutoWidth": false,
+                        "bFilter": false,
+                        "sPaginationType": "full_numbers",
+
+                        "bInfo": true,
+                        language: {
+                            paginate: {
+                                next: '<i class="icon-arrow-right5"></i>',
+                                first: '<i class="icon-previous2"></i>',
+                                last: '<i class="icon-next2"></i>',
+                                previous: '<i class="icon-arrow-left5"></i>'
+                            }
+                        },
+                        "lengthMenu": [
+                            [6, 10, 15, -1],
+                            [6, 10, 15, "All"]
+                        ]
+                    });
+                });
+                </script>
+            </div>
+            <!-- /main content -->
+        </div>
+        <!-- /page content -->
+    </div>
+    <!--************ End Page Container *********-->
+    <div id="discard-change" class="modal fade moda-sm">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert-warning-center text-center">
+                        <a href="#" class="icon"><i class="icon-info3"></i></a>
+                        <p class="text-semibold mb-4 font-medium-3">Are you sure you want to discard this quote/claim?</p>
+                        <a href="add-new-user.html" class="btn btn-grey-outline" data-dismiss="modal">No</a>
+                        <a href="search-client.html" class="btn btn-primary">Yes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="activate-broker" class="modal fade moda-sm">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert-warning-center text-center">
+                        <a href="#" class="icon"><i class="icon-info3"></i></a>
+                        <p class="text-semibold mb-4 font-medium-3">Are you sure you want to disable this customer?</p>
+                        <a class="btn btn-grey-outline" data-dismiss="modal">No</a>
+                        <a class="btn btn-primary" data-dismiss="modal">Yes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="download-documents" class="modal fade">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header modal-header-border">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h5 class="modal-title">Claim Documents</h5>
+                </div>
+                <div class="modal-body fixed-height">
+                    <div class="mb-2">Claim Number <span class="text-semibold">CL54689</span> </div>
+                    <div class="table-responsive mb-2">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Document Name</th>
+                                    <th>Select</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor sit amet.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor sit amet.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor sit.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-right">
+                        <a class="btn btn-primary-outline btn-sm"><i class="icon-download4 mr-1"></i> Download Selected </a>
+                        <a class="btn btn-primary-outline btn-sm"><i class="icon-envelop3 mr-1"></i> Email Selected </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary" data-dismiss="modal"> <i class="icon-cross3 font-large-2"></i> Close </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="download-documents-quote" class="modal fade">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header modal-header-border">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h5 class="modal-title">Quote Documents</h5>
+                </div>
+                <div class="modal-body fixed-height">
+                    <div class="mb-2">Quote Number <span class="text-semibold">QU214567</span> </div>
+                    <div class="table-responsive mb-2">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Document Name</th>
+                                    <th>Select</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor sit amet.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor sit amet.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor sit.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-right">
+                        <a class="btn btn-primary-outline btn-sm"><i class="icon-download4 mr-1"></i> Download Selected </a>
+                        <a class="btn btn-primary-outline btn-sm"><i class="icon-envelop3 mr-1"></i> Email Selected </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary" data-dismiss="modal"> <i class="icon-cross3 font-large-2"></i> Close </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="download-documents-policy" class="modal fade">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header modal-header-border">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h5 class="modal-title">Policy Documents</h5>
+                </div>
+                <div class="modal-body fixed-height">
+                    <div class="mb-2">Policy Number <span class="text-semibold">POL12548</span> </div>
+                    <div class="table-responsive mb-2">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Document Name</th>
+                                    <th>Select</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor sit amet.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor sit amet.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor sit.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <a class="btn-link-doc"><i class="icon-file-pdf"></i> Lorem ipsum dolor.pdf</a></td>
+                                    <td>
+                                        <div class="pretty p-default">
+                                            <input type="checkbox" />
+                                            <div class="state p-primary">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-right">
+                        <a class="btn btn-primary-outline btn-sm"><i class="icon-download4 mr-1"></i> Download Selected </a>
+                        <a class="btn btn-primary-outline btn-sm"><i class="icon-envelop3 mr-1"></i> Email Selected </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary" data-dismiss="modal"> <i class="icon-cross3 font-large-2"></i> Close </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="cancel-policy" class="modal fade moda-sm ">
+        <div class="modal-dialog modal-sm ">
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <button type="button " class="close " data-dismiss="modal ">×</button>
+                    <h5 class="modal-title ">Cancel Policy</h5>
+                </div>
+                <div class="modal-body ">
+                    <form class="form" action="#">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-12 label-control">Cancellation Reason</label>
+                                        <div class="col-sm-12">
+                                            <select class="form-control field-sm">
+                                                <option disabled="" selected="" value="Select">Select</option>
+                                                <option>Product unsuitable / misunderstood</option>
+                                                <option>Product too expensive</option>
+                                                <option>Alternative product purchased</option>
+                                                <option>Cover overlapped with pre-existing cover</option>
+                                                <option>Product cancelled within cooling off period</option>
+                                                <option>Poor service/complaint</option>
+                                                <option>Cover no longer required</option>
+                                                <option>Cancelled by Insured </option>
+                                                <option>Not known</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-12 label-control">Cancellation Cover Start Date</label>
+                                        <div class="col-sm-12">
+                                            <div class="form-group has-feedback has-feedback-left field-sm mb-0">
+                                                <input type="text" class="form-control ui-autocomplete-input" placeholder="DD/MM/YYYY">
+                                                <div class="form-control-feedback">
+                                                    <i class="icon-calendar text-blue"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer ">
+                    <a class="btn btn-grey-outline" data-dismiss="modal">Close</a>
+                    <a href="pending-cancellation.html" class="btn btn-primary">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

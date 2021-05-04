@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XClaims</title>
+    <link href="css/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/graph.js"></script>
+</head>
+
+<body class="bg-white">
+    <!--********* Header Starts *********-->
+    <div class="header">
+        <div class="navbar main-top">
+            <div class="cs-nav">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <div class="mobile-button pull-right">
+                            <a href="javascript:void(0)" class="navbar-toggler sidebar-large" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"><span class="icon"></span></a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-left ml-4">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle legitRipple btn-notification" data-toggle="dropdown">
+                            <i class="icon-bell3"></i>
+                            <span class="position-right"><span class="hide-xs">Notifications</span> <i class="caret"></i> </span>
+                            <span class="badge bg-warning-400">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-content width-350 dropdown-notification">
+                            <ul class="media-list dropdown-content-body">
+                                <li class="media">
+                                    <div class="media-body">
+                                        Quote Number <a href="create-quote-view.html" class="text-semibold">QCH12456</a> expires on 25/05/2019.
+                                        <div class="media-annotation">May 25, 12:47</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Method changed successfully for <a href="view-client.html" class="text-semibold"> Christopher Wallace </a>
+                                        <div class="media-annotation">May 13, 10:25</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Due on June 16 2016 for Policy Number <a href="view-policy.html" class="text-semibold">POL123456</a>
+                                        <div class="media-annotation"> May 12, 09:37</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-content-footer">
+                                <a href="#" data-popup="tooltip" title="" data-original-title="All Notifications"><i class="icon-menu display-block"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user">
+                        <a class="dropdown-toggle btn btn-primary-outline btn-header" data-toggle="dropdown">
+                            <span>Hi, <span class="hide-xs">Nathan Jacobson</span></span>
+                            <i class="caret"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="login.html"><i class="icon-switch2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--********* End Header *********-->
+    <!--********* Page Container Start *********-->
+    <div class="page-container">
+        <!-- Page content -->
+        <div class="page-content">
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+                    <a class="navbar-brand logo logo-white" href="index.html">
+                        <img src="assets/images/logo.png" class="logo-full">
+                    </a>
+                    <ul class="navigation navigation-main navigation-accordion">
+                        <li class="active-page"><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
+                        <li><a href="worklist.html"><i class="icon-profile"></i> <span>Worklist Detail View</span></a></li>
+                        <li><a href="search-policy.html"><i class="icon-file-text"></i> <span>Claim Recovery</span></a></li>
+                        <li><a><i class="icon-clipboard"></i> <span>Claim Enquiry</span></a></li>
+                        <li><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Policy Enquiry</span></a></li>
+                        <li><a href="create-quote.html"><i class="icon-credit-card"></i> <span>Claim Billing</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+                <div class="row mb-2 mt-2">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-lg-3">
+                        <div class="info-box info-box-1"><span class="info-box-icon"><i class="icon-file-text"></i></span>
+                            <div class="info-box-content"><span class="info-box-text">All Quotes</span> <span class="info-box-number">958</span></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-lg-3">
+                        <div class="info-box info-box-2"><span class="info-box-icon"><i class="icon-profile"></i></span>
+                            <div class="info-box-content"><span class="info-box-text">All Bound Policies</span> <span class="info-box-number">628</span></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-lg-3">
+                        <div class="info-box info-box-3"><span class="info-box-icon"><i class="icon-file-text2"></i></span>
+                            <div class="info-box-content"><span class="info-box-text">All Bound Premium</span> <span class="info-box-number">$ 64,546</span></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-lg-3">
+                        <div class="info-box info-box-4"><span class="info-box-icon"><i class=" icon-file-locked"></i></span>
+                            <div class="info-box-content"><span class="info-box-text">Closed Claim Counts</span> <span class="info-box-number">325</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-7 col-lg-8">
+                        <div class="panel panel-home match-height">
+                            <div class="panel-heading mb-0">
+                                <h3 class="panel-title">Volume by Claims</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="chartContainer1" style="height: 220px; width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-lg-4">
+                        <div class="panel panel-home match-height">
+                            <div class="panel-heading mb-0">
+                                <h3 class="panel-title">Claim Status</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="chartContainer2" style="height: 220px; width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="panel panel-home mb-0">
+                            <div class="panel-heading mb-0">
+                                <h3 class="panel-title">Task List </h3>
+                                <div class="heading-elements">
+                                    <ul class="icons-list">
+                                        <li><a data-action="collapse"></a></li>
+                                        <li><a data-action="close"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="row clearfix home-tabs nav nav-tabs no-border">
+                                    <li class="col-sm-6 col-md-3"><a class="active" data-toggle="tab" href="#tab1"><i class="icon-user-cancel mr-1"></i> Claims</a></li>
+                                    <li class="col-sm-6 col-md-3"><a data-toggle="tab" href="#tab2"> <i class="icon-history mr-1"></i>Under Review</a></li>
+                                    <li class="col-sm-6 col-md-3"><a data-toggle="tab" href="#tab1"> <i class="icon-users2 mr-1"></i>Payment Due</a></li>
+                                    <li class="col-sm-6 col-md-3"><a data-toggle="tab" href="#tab2"> <i class="icon-pencil5 mr-1"></i> Closed</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="tab1" class="tab-pane fade in active">
+
+                                <div class="table-responsive">
+                                    <table class="table table-striped" id="example2">
+                                        <thead>
+                                            <tr>
+                                                <th>Policy Number</th>
+                                                <th>Client Name</th>
+                                                <th>Product</th>
+                                                <th>Start Date</th>
+                                                <th>End Date</th>
+                                                <th>Amount Due</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="pending-cancellation.html" class="text-semibold">P0905190074</a></td>
+                                                <td>William Jack</td>
+                                                <td>Residental Strata</td>
+                                                <td>01/05/2018</td>
+                                                <td>30/06/2019</td>
+                                                <td>$1254.00</td>
+                                                <td>
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="icon-menu4"></i>
+                                                            </a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="pending-cancellation.html"><i class="icon-eye pull-right"></i>View </a></li>
+                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="pending-cancellation.html" class="text-semibold">P0905190074</a></td>
+                                                <td>Henry Cooper</td>
+                                                <td>Commercial Strata</td>
+                                                <td>01/05/2018</td>
+                                                <td>30/06/2019</td>
+                                                <td>$854.50</td>
+                                                <td>
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="icon-menu4"></i>
+                                                            </a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="pending-cancellation.html"><i class="icon-eye pull-right"></i>View </a></li>
+                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="pending-cancellation.html" class="text-semibold">P0905190074</a></td>
+                                                <td>James Thomas</td>
+                                                <td>Residental Strata</td>
+                                                <td>01/05/2018</td>
+                                                <td>30/06/2019</td>
+                                                <td>$1188.00</td>
+                                                <td>
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="icon-menu4"></i>
+                                                            </a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="pending-cancellation.html"><i class="icon-eye pull-right"></i>View </a></li>
+                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="view-policy.html" class="text-semibold">P0905190074</a></td>
+                                                <td>Matthew Tyler</td>
+                                                <td>Commercial Strata</td>
+                                                <td>01/06/2018</td>
+                                                <td>30/06/2019</td>
+                                                <td>$1254.00</td>
+                                                <td>
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="icon-menu4"></i>
+                                                            </a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a data-toggle="modal" data-target="#activate-broker"><i class="icon-eye pull-right"></i>View </a></li>
+                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                             <div id="tab2" class="tab-pane fade">
+                                <div class="table-responsive">
+                                    <table class="table table-striped" id="example2">
+                                        <thead>
+                                            <tr>
+                                                <th>Policy Number</th>
+                                                <th>Client Name</th>
+                                                <th>Product</th>
+                                                <th>Start Date</th>
+                                                <th>End Date</th>
+                                                <th>Amount Due</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="pending-cancellation.html" class="text-semibold">P0905190074</a></td>
+                                                <td>William Jack</td>
+                                                <td>Residental Strata</td>
+                                                <td>01/05/2018</td>
+                                                <td>30/06/2019</td>
+                                                <td>$1254.00</td>
+                                                <td>
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="icon-menu4"></i>
+                                                            </a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="pending-cancellation.html"><i class="icon-eye pull-right"></i>View </a></li>
+                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="pending-cancellation.html" class="text-semibold">P0905190074</a></td>
+                                                <td>Henry Cooper</td>
+                                                <td>Commercial Strata</td>
+                                                <td>01/05/2018</td>
+                                                <td>30/06/2019</td>
+                                                <td>$854.50</td>
+                                                <td>
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="icon-menu4"></i>
+                                                            </a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="pending-cancellation.html"><i class="icon-eye pull-right"></i>View </a></li>
+                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="pending-cancellation.html" class="text-semibold">P0905190074</a></td>
+                                                <td>James Thomas</td>
+                                                <td>Residental Strata</td>
+                                                <td>01/05/2018</td>
+                                                <td>30/06/2019</td>
+                                                <td>$1188.00</td>
+                                                <td>
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="icon-menu4"></i>
+                                                            </a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="pending-cancellation.html"><i class="icon-eye pull-right"></i>View </a></li>
+                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="view-policy.html" class="text-semibold">P0905190074</a></td>
+                                                <td>Matthew Tyler</td>
+                                                <td>Commercial Strata</td>
+                                                <td>01/06/2018</td>
+                                                <td>30/06/2019</td>
+                                                <td>$1254.00</td>
+                                                <td>
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="icon-menu4"></i>
+                                                            </a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a data-toggle="modal" data-target="#activate-broker"><i class="icon-eye pull-right"></i>View </a></li>
+                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                             </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /main content -->
+        </div>
+        <!-- /page content -->
+    </div>
+    <!--************ End Page Container *********-->
+    <script>
+    window.onload = function() {};
+
+
+    var chart1 = new CanvasJS.Chart("chartContainer1", {
+        animationEnabled: true,
+        theme: "light2",
+        title: {
+            text: "",
+            fontFamily: "arial black",
+            fontColor: "#695A42"
+        },
+        axisX: {
+            interval: 1,
+            intervalType: "month",
+            valueFormatString: "MMM",
+
+
+
+            gridColor: "transparent",
+            labelAngle: -40,
+            titleFontSize: 13,
+            labelFontSize: 11
+        },
+        axisY: {
+            valueFormatString: "#0",
+            gridColor: "transparent",
+            tickColor: ""
+        },
+        axisY: {
+            includeZero: true,
+            labelFontSize: 11,
+            prefix: "",
+        },
+
+
+
+        legend: {
+            verticalAlign: "bottom",
+            horizontalAlign: "center",
+            fontSize: 13
+        },
+
+
+
+        toolTip: {
+            shared: true,
+            content: toolTipContent
+        },
+        dataPointMaxWidth: 30,
+        data: [{
+                type: "stackedColumn",
+                showInLegend: true,
+                color: "#f08321",
+                xValueFormatString: "MMM",
+                name: "Profit",
+                dataPoints: [
+                    { y: 70, x: new Date(2020, 0) },
+                    { y: 50, x: new Date(2020, 1) },
+                    { y: 85, x: new Date(2020, 2) },
+                    { y: 50, x: new Date(2020, 3) },
+                    { y: 85, x: new Date(2020, 4) },
+                    { y: 60, x: new Date(2020, 5) },
+                    { y: 55, x: new Date(2020, 6) }
+                ]
+            },
+            {
+                type: "stackedColumn",
+                showInLegend: true,
+                name: "Target",
+                xValueFormatString: "MMM",
+                color: "#eef2f5",
+                /*color: "#dc3545",*/
+                dataPoints: [
+                    { y: 80, x: new Date(2020, 0) },
+                    { y: 50, x: new Date(2020, 1) },
+                    { y: 70, x: new Date(2020, 2) },
+                    { y: 60, x: new Date(2020, 3) },
+                    { y: 80, x: new Date(2020, 4) },
+                    { y: 55, x: new Date(2020, 5) },
+                    { y: 70, x: new Date(2020, 6) }
+                ]
+            }
+        ]
+    });
+    chart1.render();
+    var chart2 = new CanvasJS.Chart("chartContainer2", {
+        animationEnabled: true,
+        title: {
+
+        },
+        legend: {
+            verticalAlign: "bottom",
+            horizontalAlign: "center",
+            fontSize: 13
+        },
+        data: [{
+            type: "pie",
+            startAngle: 260,
+            showInLegend: true,
+            innerRadius: 100,
+            dataPoints: [
+
+                /*{ y: 1200000, name: "New Claims", color: "#51ad3d", exploded: true },*/
+
+                { y: 1200000, name: "New Claims", color: "#f08321", exploded: true },
+                { y: 4500000, name: "Closed Claims", color: "#1ea9e1", exploded: true },
+                /*{ y: 2500000, name: "Renew Claims", color: "#1ea9e1" , exploded: true },*/
+
+
+            ]
+        }]
+    });
+    chart2.render();
+
+    function toolTipContent(e) {
+        var str = "";
+        var total = 0;
+        var str2, str3;
+        for (var i = 0; i < e.entries.length; i++) {
+            var str1 = "<span style= \"color:" + e.entries[i].dataSeries.color + "\"> " + e.entries[i].dataSeries.name + "</span>: €<strong>" + e.entries[i].dataPoint.y + "</strong><br/>";
+            total = e.entries[i].dataPoint.y + total;
+            str = str.concat(str1);
+        }
+        str2 = "<span style = \"color:DodgerBlue;\"><strong>" + (e.entries[0].dataPoint.x).getFullYear() + "</strong></span><br/>";
+        total = Math.round(total * 100) / 100;
+        str3 = "<span style = \"color:Tomato\">Total:</span><strong> €" + total + "</strong><br/>";
+        return (str2.concat(str)).concat(str3);
+    }
+
+
+
+    function toggleDataSeries(e) {
+        if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+            e.dataSeries.visible = false;
+        } else {
+            e.dataSeries.visible = true;
+        }
+        e.chart.render();
+    }
+
+    $(function() {
+        $('#example2').dataTable({
+            "bPaginate": true,
+            "bAutoWidth": false,
+            "bFilter": false,
+            "sPaginationType": "full_numbers",
+
+            "bInfo": false,
+            language: {
+                paginate: {
+                    next: '<i class="icon-arrow-right5"></i>',
+                    first: '<i class="icon-previous2"></i>',
+                    last: '<i class="icon-next2"></i>',
+                    previous: '<i class="icon-arrow-left5"></i>'
+                }
+            },
+            "lengthMenu": [
+                [3, 6, 9, -1],
+                [3, 6, 6, "All"]
+            ]
+        });
+    });
+    </script>
+</body>
+
+</html>

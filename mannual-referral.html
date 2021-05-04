@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STRATA COMMUNITY INSURANCE</title>
+    <link href="css/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="MyCtrl" class="bg-white sidebar-xs">
+    <script type='text/javascript'>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('MyCtrl', function($scope) {
+        $scope.setFile = function(element) {
+            $scope.$apply(function($scope) {
+                $scope.theFile = element.files[0];
+                $scope.sizeDis = false;
+            });
+        };
+    });
+    </script>
+    <!--********* Header Starts *********-->
+     <div class="header">
+        <div class="navbar main-top">
+            <div class="cs-nav">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <div class="mobile-button pull-right">
+                            <a href="javascript:void(0)" class="navbar-toggler sidebar-large" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"><span class="icon"></span></a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-left ml-4">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle legitRipple btn-notification" data-toggle="dropdown">
+                            <i class="icon-bell3"></i>
+                            <span class="position-right"><span class="hide-xs">Notifications</span> <i class="caret"></i> </span>
+                            <span class="badge bg-warning-400">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-content width-350 dropdown-notification">
+                            <ul class="media-list dropdown-content-body">
+                                <li class="media">
+                                    <div class="media-body">
+                                        Quote Number <a href="create-quote-view.html" class="text-semibold">QCH12456</a> expires on 25/05/2019.
+                                        <div class="media-annotation">May 25, 12:47</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Method changed successfully for <a href="view-client.html" class="text-semibold"> Christopher Wallace </a>
+                                        <div class="media-annotation">May 13, 10:25</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Due on June 16 2016 for Policy Number <a href="view-policy.html" class="text-semibold">POL123456</a>
+                                        <div class="media-annotation"> May 12, 09:37</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-content-footer">
+                                <a href="#" data-popup="tooltip" title="" data-original-title="All Notifications"><i class="icon-menu display-block"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user">
+                        <a class="dropdown-toggle btn btn-primary-outline btn-header" data-toggle="dropdown">
+                            <span>Hi, <span class="hide-xs">Nathan Jacobson</span></span>
+                            <i class="caret"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="login.html"><i class="icon-switch2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--********* End Header *********-->
+    <!--********* Page Container Start *********-->
+    <div class="page-container">
+        <!-- Page content -->
+        <div class="page-content">
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+                    <a class="navbar-brand logo logo-white" href="index.html">
+                        <img src="assets/images/logo.png" class="logo-full">
+                    </a>
+                    <ul class="navigation navigation-main navigation-accordion">
+                        <li><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
+                        <li><a href="#" class="has-ul"><i class="icon-user-tie"></i> <span>Client Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-client.html"><span>Search Client</span></a></li>
+                                <li><a href="add-client.html"><span>Add New Client</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="has-ul"><i class="icon-profile"></i> <span>Claim Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-claim.html"><span>Search Claim</span></a></li>
+                                <li><a href="claim.html"><span>Make a Claim</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="search-policy.html"><i class="icon-search4"></i> <span>Search Policy</span></a></li>
+                        <li><a><i class="icon-credit-card"></i> <span>Make a Payment</span></a></li>
+                        <li class="active-page"><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Create New Quote</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+                <form class="form form-horizontal" action="#">
+                    <div class="content-block">
+                        <div class="row no-pad create-quote">
+                            <div class="col-sm-9 col-md-10">
+                                <div class="page-title">
+                                    <ul class="breadcrumb breadcrumb-caret">
+                                        <li><a href="search-client.html">Search Client</a></li>
+                                        <li class="active">Referral Request</li>
+                                    </ul>
+                                </div>
+                                <div class="panel panel-body bg-light-grey mb-3">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Policy Number</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    POL01190083
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Quote ID</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    <div class="position-relative field-md">
+                                                        Q2101190083
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Client Name</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    William Jack
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Payment Type</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    Monthly
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Policy Period </label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    01/07/2019 - 30/06/2022
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Effective Date </label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    01/07/2019
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Coverage</label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    Defined Events
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Premium </label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    $174.32 per month
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-5 label-control pt-half">Status </label>
+                                                <div class="col-sm-8 col-lg-7">
+                                                    <span class="label status-label bg-orange">Referral Required</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-10">
+                                            <div class="form-group clearfix">
+                                                <label class="col-sm-4 col-lg-3 label-control pt-half">Address </label>
+                                                <div class="col-sm-8 col-lg-9">
+                                                    123, Alexandra Street, Bardon QLD 4065
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alert alert-info alert-styled-left mb-3">
+                                    <span class="text-semibold">Referral Request!</span> To submit a referral request to our Underwriting team, please provide your remarks and any relevant attachments, then click to submit the referral below:
+                                </div>
+                                <div class="panel bg-light-grey">
+                                    <div class="panel-body">
+                                        <div class="row clearfix">
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Remarks for Underwriting</label>
+                                                <textarea class="form-control" rows="3" cols="18"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel bg-light-grey">
+                                    <div class="panel-body">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 label-control">Upload Documents </label>
+                                            <div class="col-sm-9">
+                                                <div class="file-upload btn btn-primary btn-sm"> <span>
+                                                        <i class="icon-file-upload"></i>
+                                                        Upload</span>
+                                                    <input class="upload" type="file">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped font-small-3">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Document Name </th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><a href="#" class="text-semibold"><i class="icon-file-pdf mr-half"></i> Document 1.pdf</a></td>
+                                                        <td>
+                                                            <a title="Delete" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-trash font-small-2 mr-1"></i> Delete </a>
+                                                            <a title="View" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-eye font-small-2 mr-1"></i> View </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="#" class="text-semibold"><i class="icon-file-word mr-half"></i> Document 1.doc</a></td>
+                                                        <td>
+                                                            <a title="Delete" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-trash font-small-2 mr-1"></i> Delete </a>
+                                                            <a title="View" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-eye font-small-2 mr-1"></i> View </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tabbable">
+                                        <ul class="nav nav-tabs nav-tabs-bottom mb-2">
+                                            <li><a href="#bottom-justified-tab1" data-toggle="tab" class="active">Underwriter Comments</a></li>
+                                            <li><a href="#bottom-justified-tab2" data-toggle="tab" class="">Attachment</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active show" id="bottom-justified-tab1">
+                                                <ul class="list-feed no-style">
+                                                    <li>
+                                                        <div class="text-muted">Jan 12, 12:47</div>
+                                                        <a href="#">David Linner</a> requested bla bla bla bla...
+                                                    </li>
+                                                    <li>
+                                                        <div class="text-muted">Jan 12, 12:47</div>
+                                                        <a href="#">David Linner</a> says bla bla bla bla...
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-pane" id="bottom-justified-tab2">
+                                                <div class="table-responsive mb-5">
+                                                    <table class="table table-striped mb-0 font-small-3">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Document Name</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <i class="icon-file-pdf text-danger mr-half"></i> Document-1.pdf
+                                                                </td>
+                                                                <td>
+                                                                    <a title="Delete" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-trash font-small-2 mr-1"></i> Delete </a>
+                                                                    <a title="View" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-eye font-small-2 mr-1"></i> View </a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <i class="text-blue icon-file-word"></i> Document-2.doc
+                                                                </td>
+                                                                <td>
+                                                                    <a title="Delete" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-trash font-small-2 mr-1"></i> Delete </a>
+                                                                    <a title="View" href="#" class="btn btn-primary-outline btn-xs"> <i class="icon-eye font-small-2 mr-1"></i> View </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <a class="btn btn-primary-outline"> <i class="icon-cross font-medium-1"></i> Cancel </a>
+                                    <a class="btn btn-primary "> <i class="icon-checkmark2"></i> Submit Referral</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-lg-2 stickWidth">
+                                <div class="right-fixed-panel">
+                                    <div class="mb-4">
+                                        <a href="create-quote-view.html" class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-eye font-medium-1 mr-1 "></i> View </a>
+                                        <a data-toggle="modal" data-target="#discard-change" class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-bin font-medium-1 mr-1 "></i> Discard Quote </a>
+                                        <a href="create-quote-edit.html" class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-pencil7 font-medium-1 mr-1 "></i> Edit </a>
+                                    </div>
+                                    <a class="btn btn-primary-outline btn-block"> <i class="icon-cross font-medium-1"></i> Cancel </a>
+                                    <a class="btn btn-primary btn-block"> <i class="icon-checkmark2"></i> Submit </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- /main content -->
+            </div>
+            <!-- /page content -->
+        </div>
+        <!--************ End Page Container *********-->
+        <script type="text/javascript">
+        $(function() {
+
+            if ($(window).width() > 768) {
+                var sidebar = $('.right-fixed-panel');
+                var top = sidebar.offset().top;
+                var sidebarWidth = $('.stickWidth').width();
+                var lastScrollTop = 0
+                $(window).scroll(function(event) {
+                    var y = $(this).scrollTop();
+                    if (y >= 5) {
+                        sidebar.addClass('sticky');
+                        var sidebarWidth = $('.stickWidth').width();
+                        sidebar.css({ width: sidebarWidth + "px " });
+                    } else {
+                        sidebar.removeClass('sticky');
+                        sidebar.css({ width: 'auto' });
+                    }
+                });
+            }
+        });
+        </script>
+        <div id="discard-change" class="modal fade moda-sm">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="alert-warning-center text-center">
+                            <a href="#" class="icon"><i class="icon-info3"></i></a>
+                            <p class="text-semibold mb-4 font-medium-3">Are you sure you want to discard this quote/claim?</p>
+                            <a href="add-new-user.html" class="btn btn-grey-outline" data-dismiss="modal">No</a>
+                            <a href="search-client.html" class="btn btn-primary">Yes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

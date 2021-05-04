@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STRATA COMMUNITY INSURANCE</title>
+    <link href="css/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="MyCtrl">
+    <script type='text/javascript'>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('MyCtrl', function($scope) {
+        $scope.setFile = function(element) {
+            $scope.$apply(function($scope) {
+                $scope.theFile = element.files[0];
+                $scope.sizeDis = false;
+            });
+        };
+    });
+    </script>
+    <!--********* Header Starts *********-->
+     <div class="header">
+        <div class="navbar main-top">
+            <div class="cs-nav">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <div class="mobile-button pull-right">
+                            <a href="javascript:void(0)" class="navbar-toggler sidebar-large" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"><span class="icon"></span></a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-left ml-4">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle legitRipple btn-notification" data-toggle="dropdown">
+                            <i class="icon-bell3"></i>
+                            <span class="position-right"><span class="hide-xs">Notifications</span> <i class="caret"></i> </span>
+                            <span class="badge bg-warning-400">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-content width-350 dropdown-notification">
+                            <ul class="media-list dropdown-content-body">
+                                <li class="media">
+                                    <div class="media-body">
+                                        Quote Number <a href="create-quote-view.html" class="text-semibold">QCH12456</a> expires on 25/05/2019.
+                                        <div class="media-annotation">May 25, 12:47</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Method changed successfully for <a href="view-client.html" class="text-semibold"> Christopher Wallace </a>
+                                        <div class="media-annotation">May 13, 10:25</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Due on June 16 2016 for Policy Number <a href="view-policy.html" class="text-semibold">POL123456</a>
+                                        <div class="media-annotation"> May 12, 09:37</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-content-footer">
+                                <a href="#" data-popup="tooltip" title="" data-original-title="All Notifications"><i class="icon-menu display-block"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user">
+                        <a class="dropdown-toggle btn btn-primary-outline btn-header" data-toggle="dropdown">
+                            <span>Hi, <span class="hide-xs">Nathan Jacobson</span></span>
+                            <i class="caret"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="login.html"><i class="icon-switch2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--********* End Header *********-->
+    <!--********* Page Container Start *********-->
+    <div class="page-container">
+        <!-- Page content -->
+        <div class="page-content">
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+                    <a class="navbar-brand logo logo-white" href="index.html">
+                        <img src="assets/images/logo.png" class="logo-full">
+                    </a>
+                    <ul class="navigation navigation-main navigation-accordion">
+                        <li><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
+                        <li><a href="#" class="has-ul"><i class="icon-user-tie"></i> <span>Client Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-client.html"><span>Search Client</span></a></li>
+                                <li><a href="add-client.html"><span>Add New Client</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="has-ul"><i class="icon-profile"></i> <span>Claim Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-claim.html"><span>Search Claim</span></a></li>
+                                <li><a href="claim.html"><span>Make a Claim</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="search-policy.html"><i class="icon-search4"></i> <span>Search Policy</span></a></li>
+                        <li><a><i class="icon-credit-card"></i> <span>Make a Payment</span></a></li>
+                        <li class="active-page"><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Create New Quote</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+                <div class="page-title">
+                    <ul class="breadcrumb breadcrumb-caret">
+                        <li>Edit Quote</li>
+                    </ul>
+                </div>
+                <form class="form form-horizontal" action="#">
+                    <div class="panel panel-body no-header">
+                        <div class="row form-group clearfix">
+                            <label class="col-md-3 label-control">Client</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control field-md display-inline-block mr-1" placeholder="" value="William Jack" readonly="">
+                            </div>
+                        </div>
+                        <div class="row form-group clearfix">
+                            <label class="col-md-3 label-control">Assigned To</label>
+                            <div class="col-md-9">
+                                <select class="form-control field-md" id="relationship">
+                                    <option disabled="" selected="" hidden="" value="Select">Select</option>
+                                    <option value="Client 1">Client 1</option>
+                                    <option value="Client 2">Client 2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group clearfix">
+                            <label class="col-md-3 label-control">Inception Date</label>
+                            <div class="col-md-9">
+                                <div class="position-relative field-md">
+                                    <div class="form-group has-feedback has-feedback-left mb-0">
+                                        <input type="text" class="form-control" value="01/07/2019">
+                                        <div class="form-control-feedback">
+                                            <i class="icon-calendar text-blue"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group clearfix">
+                            <label class="col-md-3 label-control">Expiration Date</label>
+                            <div class="col-md-9">
+                                <div class="position-relative field-md">
+                                    <div class="form-group has-feedback has-feedback-left mb-0">
+                                        <input type="text" class="form-control" value="30/06/2022">
+                                        <div class="form-control-feedback">
+                                            <i class="icon-calendar text-blue"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group clearfix">
+                            <label class="col-md-3 label-control">Effective Date</label>
+                            <div class="col-md-9">
+                                <div class="position-relative field-md">
+                                    <div class="form-group has-feedback has-feedback-left mb-0">
+                                        <input type="text" class="form-control" value="01/07/2019">
+                                        <div class="form-control-feedback">
+                                            <i class="icon-calendar text-blue"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group clearfix">
+                            <label class="col-md-3 label-control">Product</label>
+                            <div class="col-md-9">
+                                <div class="check-list check-list-sm choose-product mb-4">
+                                    <ul class="row clearfix row-seamless">
+                                        <li class="col-sm-4 col-lg-3">
+                                            <input type="radio" name="product-type" value="residental" id="residental" checked="">
+                                            <label for="residental">
+                                                <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M441.165,309.041H337.067c-4.192,0-7.589,3.398-7.589,7.589v91.414c0,4.192,3.398,7.589,7.589,7.589h104.099
+                                                            c4.192,0,7.589-3.398,7.589-7.589V316.63C448.754,312.439,445.358,309.041,441.165,309.041z M433.576,400.455h-88.921v-48.458
+                                                            h88.921V400.455z M433.577,336.82h-88.921v-12.601h88.921V336.82z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M504.411,423.069h-34.429v-64.923c0-4.191-3.398-7.589-7.589-7.589c-4.191,0-7.589,3.398-7.589,7.589v64.923H337.067
+                                                            c-4.191,0-7.589,3.398-7.589,7.589v36.684h-11.362V316.63c0-4.191-3.398-7.589-7.589-7.589h-91.414
+                                                            c-4.191,0-7.589,3.398-7.589,7.589v150.712h-6.792v-36.684c0-4.191-3.398-7.589-7.589-7.589h-4.353V292.692L323.794,167.62
+                                                            l131.009,125.079v30.031c0,4.191,3.398,7.589,7.589,7.589c4.191,0,7.589-3.398,7.589-7.589v-15.54l6.373,6.084
+                                                            c2.798,2.671,7.157,2.81,10.119,0.324l21.899-18.383c1.016-0.853,1.862-1.914,2.344-3.15c1.163-2.98,0.36-6.219-1.823-8.298
+                                                            l-37.437-35.653v-98.091c0-4.191-3.398-7.589-7.589-7.589h-69.297c-4.191,0-7.589,3.398-7.589,7.589v17.64l-47.018-44.778
+                                                            l-11.002-10.22c-2.911-2.705-7.415-2.705-10.33,0l-11.071,10.286l-81.294,77.421c-0.571-57.698-19.797-111.241-50.902-142.572
+                                                            c-3.083-3.105-8.171-2.905-11.056,0.387c-2.637,3.007-2.471,7.527,0.348,10.365c28.804,28.978,46.461,79.654,46.461,134.463
+                                                            c0,4.044-0.122,8.085-0.312,12.081l-72.107,68.672c-2.182,2.079-2.985,5.317-1.822,8.298c0.482,1.235,1.328,2.297,2.344,3.15
+                                                            l21.898,18.383c1.415,1.188,3.148,1.777,4.878,1.777c1.892,0,3.779-0.704,5.241-2.1l6.379-6.089v14.719
+                                                            c-17.956,25.469-40.777,39.468-64.467,39.468c-25.506,0-49.739-16.014-68.236-45.091c-19.173-30.143-29.733-70.368-29.733-113.267
+                                                            s10.56-83.124,29.734-113.266c18.495-29.077,42.729-45.091,68.236-45.091c8.859,0,17.598,1.932,26.061,5.75
+                                                            c3.539,1.597,7.715,0.174,9.634-3.203v-0.001c2.209-3.889,0.593-8.84-3.484-10.675c-10.398-4.682-21.2-7.05-32.211-7.05
+                                                            c-30.881,0-59.663,18.51-81.042,52.122C11.402,114.146,0,157.265,0,203.013s11.402,88.866,32.105,121.413
+                                                            c14.41,22.655,32.186,38.437,51.698,46.326v52.316H60.712v-11.292c0-4.156-3.203-7.779-7.356-7.904
+                                                            c-4.297-0.129-7.822,3.317-7.822,7.586v11.611h-9.199v-11.292c0-4.156-3.203-7.779-7.356-7.904
+                                                            c-4.297-0.128-7.822,3.317-7.822,7.586v11.611H7.589c-4.191,0-7.589,3.398-7.589,7.589v44.274c0,4.191,3.398,7.589,7.589,7.589
+                                                            h189.555c0.007,0,0.013-0.001,0.019-0.001h21.95h91.414h26.52c0.007,0,0.013,0.001,0.019,0.001h167.344
+                                                            c4.191,0,7.589-3.398,7.589-7.589v-44.274C512,426.466,508.602,423.069,504.411,423.069z M402.158,157.61h54.12v76.048
+                                                            l-54.12-51.541V157.61z M165.67,297.602l-10.36-8.697l162.648-154.9l5.838-5.423l5.769,5.358l162.718,154.965l-10.361,8.698
+                                                            L329.036,151.638c-1.466-1.4-3.352-2.1-5.24-2.1c-1.886,0-3.774,0.7-5.24,2.1L165.67,297.602z M142.492,370.726
+                                                            c12.559-5.096,24.423-13.472,35.122-24.825v77.168h-9.972v-11.611c0-4.191-3.397-7.589-7.589-7.589
+                                                            c-4.192,0-7.589,3.398-7.589,7.589v11.611h-9.972V370.726z M98.981,375.228c4.659,0.874,9.387,1.319,14.166,1.319
+                                                            c4.773,0,9.501-0.455,14.166-1.337v47.858H98.981V375.228z M189.555,467.342h-4.353v0.001H15.178v-29.096h76.126
+                                                            c0.029,0,0.059,0.004,0.088,0.004h43.51c0.029,0,0.059-0.004,0.088-0.004h54.566V467.342z M302.939,467.342h-76.236V324.219
+                                                            h76.236V467.342z M496.822,467.343h-34.429v-0.001H344.656v-29.095h152.166V467.343z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M292.515,387.684h-13.269c-4.192,0-7.589,3.398-7.589,7.589s3.397,7.589,7.589,7.589h13.269
+                                                            c4.192,0,7.589-3.398,7.589-7.589S296.707,387.684,292.515,387.684z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M323.797,212.975c-18.207,0-33.021,14.814-33.021,33.021c0,18.209,14.814,33.021,33.021,33.021
+                                                            c18.208,0,33.022-14.813,33.022-33.021C356.82,227.788,342.006,212.975,323.797,212.975z M323.797,263.839
+                                                            c-9.839,0-17.843-8.005-17.843-17.843s8.004-17.843,17.843-17.843s17.844,8.005,17.844,17.843
+                                                            C341.642,255.835,333.637,263.839,323.797,263.839z" />
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                                <span>Residental Strata</span>
+                                            </label>
+                                        </li>
+                                        <li class="col-sm-4 col-lg-3">
+                                            <input type="radio" name="product-type" value="commercial" id="commercial">
+                                            <label for="commercial">
+                                                <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M231.151,447.3c-4.142,0-7.5,3.357-7.5,7.5v8.284c0,4.142,3.358,7.5,7.5,7.5c4.142,0,7.5-3.358,7.5-7.5V454.8
+                                                                C238.651,450.657,235.293,447.3,231.151,447.3z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M280.849,447.3c-4.142,0-7.5,3.357-7.5,7.5v8.284c0,4.142,3.358,7.5,7.5,7.5c4.142,0,7.5-3.358,7.5-7.5V454.8
+                                                                C288.349,450.657,284.991,447.3,280.849,447.3z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M272.566,20.709c-4.142,0-7.5,3.357-7.5,7.5v13.206h-18.132V28.209c0-4.143-3.358-7.5-7.5-7.5c-4.142,0-7.5,3.357-7.5,7.5
+                                                                v20.667c0,0.013-0.002,0.026-0.002,0.039s0.002,0.026,0.002,0.039v20.671c0,4.143,3.358,7.5,7.5,7.5c4.142,0,7.5-3.357,7.5-7.5
+                                                                v-13.21h18.132v13.21c0,4.143,3.358,7.5,7.5,7.5c4.142,0,7.5-3.357,7.5-7.5V28.209C280.066,24.066,276.708,20.709,272.566,20.709z
+                                                                " />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M487.934,248.498h-91.9V123.465c0-4.143-3.358-7.5-7.5-7.5h-0.784V97.833h9.067c4.142,0,7.5-3.357,7.5-7.5V57.198
+                                                                c0-4.143-3.358-7.5-7.5-7.5h-91.899V7.5c0-4.143-3.358-7.5-7.5-7.5h-82.835c-4.142,0-7.5,3.357-7.5,7.5v42.198h-91.899
+                                                                c-4.142,0-7.5,3.357-7.5,7.5v33.135c0,4.143,3.358,7.5,7.5,7.5h9.067v18.132h-0.784c-4.142,0-7.5,3.357-7.5,7.5v66.267
+                                                                c0,4.143,3.358,7.5,7.5,7.5c4.142,0,7.5-3.357,7.5-7.5v-58.767h250.067v125.014c0,0.007-0.001,0.013-0.001,0.019
+                                                                c0,0.007,0.001,0.013,0.001,0.019v165.628c0,0.007-0.001,0.013-0.001,0.019c0,0.006,0.001,0.013,0.001,0.019V497h-26.417v-18.138
+                                                                h4.925c4.142,0,7.5-3.357,7.5-7.5v-49.697c0-4.143-3.358-7.5-7.5-7.5h-24.85c-4.142,0-7.5,3.357-7.5,7.5v49.697
+                                                                c0,4.143,3.358,7.5,7.5,7.5h4.925V497H313.2v-84.4h9.067c4.142,0,7.5-3.357,7.5-7.5v-33.134c0-4.143-3.358-7.5-7.5-7.5H189.735
+                                                                c-4.142,0-7.5,3.357-7.5,7.5V405.1c0,4.143,3.358,7.5,7.5,7.5h9.066V497h-26.417v-18.138h4.925c4.142,0,7.5-3.357,7.5-7.5v-49.697
+                                                                c0-4.143-3.358-7.5-7.5-7.5h-24.85c-4.142,0-7.5,3.357-7.5,7.5v49.697c0,4.143,3.358,7.5,7.5,7.5h4.925V497h-26.417V219.7
+                                                                c0-4.143-3.358-7.5-7.5-7.5c-4.142,0-7.5,3.357-7.5,7.5v28.798H24.066c-4.142,0-7.5,3.357-7.5,7.5v165.667
+                                                                c0,4.143,3.358,7.5,7.5,7.5h9.067V504.5c0,4.143,3.358,7.5,7.5,7.5h82.833H206.3h99.4h82.834h82.833c4.142,0,7.5-3.357,7.5-7.5
+                                                                v-75.335h9.067c4.142,0,7.5-3.357,7.5-7.5V255.998C495.434,251.855,492.076,248.498,487.934,248.498z M115.966,497H48.133v-67.835
+                                                                h67.833V497z M115.967,414.165H31.566V263.498h84.401V414.165z M169.809,463.862h-9.85v-34.697h9.85V463.862z M248.242,497
+                                                                h-34.441v-84.4h34.441V497z M298.2,497h-34.959v-84.4H298.2V497z M206.301,397.6h-9.066v-18.134h117.533V397.6H305.7H206.301z
+                                                                 M352.042,463.862h-9.85v-34.697h9.85V463.862z M222.083,15h67.835v42.179c0,0.006-0.001,0.013-0.001,0.019
+                                                                s0.001,0.013,0.001,0.019v25.615h-67.835V15z M131.75,82.831c-0.013,0-0.026,0.002-0.039,0.002h-9.028V64.698h0.001h84.399v18.135
+                                                                h-75.294C131.776,82.833,131.763,82.831,131.75,82.831z M372.75,115.965H139.251V97.833h75.313c0.007,0,0.013,0.001,0.019,0.001
+                                                                h82.835c0.007,0,0.013-0.001,0.019-0.001h75.313V115.965z M380.289,82.833c-0.013,0-0.026-0.002-0.039-0.002
+                                                                s-0.026,0.002-0.039,0.002h-75.293V64.698h84.399v18.135H380.289z M463.867,497h-67.833v-67.835h67.833V497z M480.434,414.165
+                                                                h-84.4V263.498h84.4V414.165z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M90.332,281.632H57.199c-4.142,0-7.5,3.357-7.5,7.5v33.134c0,4.142,3.358,7.5,7.5,7.5h33.133c4.142,0,7.5-3.357,7.5-7.5
+                                                                v-33.134C97.832,284.989,94.474,281.632,90.332,281.632z M82.832,314.766H64.699v-18.134h18.133V314.766z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M189.732,281.632h-33.133c-4.142,0-7.5,3.357-7.5,7.5v33.134c0,4.143,3.358,7.5,7.5,7.5h33.133c4.142,0,7.5-3.357,7.5-7.5
+                                                                v-33.134C197.232,284.989,193.874,281.632,189.732,281.632z M182.232,314.766h-18.133v-18.134h18.133V314.766z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M355.4,281.632h-33.133c-4.142,0-7.5,3.357-7.5,7.5v33.134h-0.001c0,4.143,3.358,7.5,7.5,7.5H355.4
+                                                                c4.142,0,7.5-3.357,7.5-7.5v-33.134C362.9,284.989,359.542,281.632,355.4,281.632z M347.9,314.766h-18.133v-18.134H347.9V314.766z
+                                                                " />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M272.309,281.632h-33.134c-4.142,0-7.5,3.357-7.5,7.5v33.134c0,4.143,3.358,7.5,7.5,7.5h33.134c4.142,0,7.5-3.357,7.5-7.5
+                                                                v-33.134C279.809,284.989,276.451,281.632,272.309,281.632z M264.809,314.766h-18.134v-18.134h18.134V314.766z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M189.732,215.365h-33.133c-4.142,0-7.5,3.357-7.5,7.5v33.133c0,4.143,3.358,7.5,7.5,7.5h33.133c4.142,0,7.5-3.357,7.5-7.5
+                                                                v-33.133C197.232,218.722,193.874,215.365,189.732,215.365z M182.232,248.498h-18.133v-18.133h18.133V248.498z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M355.4,215.365h-33.133c-4.142,0-7.5,3.357-7.5,7.5v33.133h-0.001c0,4.143,3.358,7.5,7.5,7.5H355.4
+                                                                c4.142,0,7.5-3.357,7.5-7.5v-33.133C362.9,218.722,359.542,215.365,355.4,215.365z M347.9,248.498h-18.133v-18.133H347.9V248.498z
+                                                                " />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M272.309,215.365h-33.134c-4.142,0-7.5,3.357-7.5,7.5v33.133c0,4.143,3.358,7.5,7.5,7.5h33.134c4.142,0,7.5-3.357,7.5-7.5
+                                                                v-33.133C279.809,218.722,276.451,215.365,272.309,215.365z M264.809,248.498h-18.134v-18.133h18.134V248.498z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M189.732,149.097h-33.133c-4.142,0-7.5,3.357-7.5,7.5v33.134c0,4.143,3.358,7.5,7.5,7.5h33.133c4.142,0,7.5-3.357,7.5-7.5
+                                                                v-33.134C197.232,152.454,193.874,149.097,189.732,149.097z M182.232,182.232h-18.133v-18.134h18.133V182.232z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M355.4,149.097h-33.133c-4.142,0-7.5,3.357-7.5,7.5v33.134c-0.001,4.143,3.357,7.5,7.499,7.5H355.4
+                                                                c4.142,0,7.5-3.357,7.5-7.5v-33.134C362.9,152.454,359.542,149.097,355.4,149.097z M347.9,182.232h-18.133v-18.134H347.9V182.232z
+                                                                " />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M272.309,149.097h-33.134c-4.142,0-7.5,3.357-7.5,7.5v33.134c0,4.143,3.357,7.5,7.5,7.5h33.134c4.142,0,7.5-3.357,7.5-7.5
+                                                                v-33.134C279.809,152.454,276.451,149.097,272.309,149.097z M264.809,182.232h-18.134v-18.134h18.134V182.232z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M454.8,281.632h-33.133c-4.142,0-7.5,3.357-7.5,7.5v33.134c0,4.142,3.358,7.5,7.5,7.5H454.8c4.142,0,7.5-3.357,7.5-7.5
+                                                                v-33.134C462.3,284.989,458.942,281.632,454.8,281.632z M447.3,314.766h-18.133v-18.134H447.3V314.766z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M90.332,347.898H57.199c-4.142,0-7.5,3.357-7.5,7.5v33.134c0,4.143,3.358,7.5,7.5,7.5h33.133c4.142,0,7.5-3.357,7.5-7.5
+                                                                v-33.134C97.832,351.255,94.474,347.898,90.332,347.898z M82.832,381.032H64.699v-18.134h18.133V381.032z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path class="st0" d="M454.8,347.898h-33.133c-4.142,0-7.5,3.357-7.5,7.5v33.134c0,4.143,3.358,7.5,7.5,7.5H454.8c4.142,0,7.5-3.357,7.5-7.5
+                                                                v-33.134C462.3,351.255,458.942,347.898,454.8,347.898z M447.3,381.032h-18.133v-18.134H447.3V381.032z" />
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                                <span>Commercial Strata</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group text-right">
+                        <div class="col-md-12 text-right">
+                            <a class="btn btn-primary-outline"> <i class="icon-cross ml-1 font-medium-2"></i> Cancel  </a>
+                            <a href="create-quote-residental.html"  class="btn btn-primary"> Next <i class="icon-arrow-right8 ml-1 font-medium-2"></i> </a>
+                        </div>
+                    </div>
+                </form>
+                <!-- /main content -->
+            </div>
+            <!-- /page content -->
+        </div>
+        <!--************ End Page Container *********-->
+</body>
+
+</html>

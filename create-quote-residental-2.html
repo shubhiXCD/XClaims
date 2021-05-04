@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STRATA COMMUNITY INSURANCE</title>
+    <link href="css/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="MyCtrl" class="bg-white sidebar-xs">
+    <script type='text/javascript'>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('MyCtrl', function($scope) {
+        $scope.setFile = function(element) {
+            $scope.$apply(function($scope) {
+                $scope.theFile = element.files[0];
+                $scope.sizeDis = false;
+            });
+        };
+    });
+    </script>
+    <!--********* Header Starts *********-->
+     <div class="header">
+        <div class="navbar main-top">
+            <div class="cs-nav">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <div class="mobile-button pull-right">
+                            <a href="javascript:void(0)" class="navbar-toggler sidebar-large" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"><span class="icon"></span></a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-left ml-4">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle legitRipple btn-notification" data-toggle="dropdown">
+                            <i class="icon-bell3"></i>
+                            <span class="position-right"><span class="hide-xs">Notifications</span> <i class="caret"></i> </span>
+                            <span class="badge bg-warning-400">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-content width-350 dropdown-notification">
+                            <ul class="media-list dropdown-content-body">
+                                <li class="media">
+                                    <div class="media-body">
+                                        Quote Number <a href="create-quote-view.html" class="text-semibold">QCH12456</a> expires on 25/05/2019.
+                                        <div class="media-annotation">May 25, 12:47</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Method changed successfully for <a href="view-client.html" class="text-semibold"> Christopher Wallace </a>
+                                        <div class="media-annotation">May 13, 10:25</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Due on June 16 2016 for Policy Number <a href="view-policy.html" class="text-semibold">POL123456</a>
+                                        <div class="media-annotation"> May 12, 09:37</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-content-footer">
+                                <a href="#" data-popup="tooltip" title="" data-original-title="All Notifications"><i class="icon-menu display-block"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user">
+                        <a class="dropdown-toggle btn btn-primary-outline btn-header" data-toggle="dropdown">
+                            <span>Hi, <span class="hide-xs">Nathan Jacobson</span></span>
+                            <i class="caret"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="login.html"><i class="icon-switch2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--********* End Header *********-->
+    <!--********* Page Container Start *********-->
+    <div class="page-container">
+        <!-- Page content -->
+        <div class="page-content">
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+                    <a class="navbar-brand logo logo-white" href="index.html">
+                        <img src="assets/images/logo.png" class="logo-full">
+                    </a>
+                    <ul class="navigation navigation-main navigation-accordion">
+                        <li><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
+                        <li><a href="#" class="has-ul"><i class="icon-user-tie"></i> <span>Client Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-client.html"><span>Search Client</span></a></li>
+                                <li><a href="add-client.html"><span>Add New Client</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="has-ul"><i class="icon-profile"></i> <span>Claim Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-claim.html"><span>Search Claim</span></a></li>
+                                <li><a href="claim.html"><span>Make a Claim</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="search-policy.html"><i class="icon-search4"></i> <span>Search Policy</span></a></li>
+                        <li><a><i class="icon-credit-card"></i> <span>Make a Payment</span></a></li>
+                        <li class="active-page"><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Create New Quote</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper quote">
+                <div class="top-fixed-panel">
+                    <div class="row row-seamless">
+                        <div class="col-sm-12">
+                            <form action="#" class="wizard-circle wizard clearfix">
+                                <div class="steps clearfix">
+                                    <ul role="tablist">
+                                        <li role="tab" class="done"><a href="create-quote-residental.html">
+                                                <span class="step"></span> Customer Info </a> </li>
+                                        <li role="tab" class="current"><a href="create-quote-residental-2.html">
+                                                <span class="step"></span> Properties Details </a> </li>
+                                        <li role="tab" class="disabled"><a href="#">
+                                                <span class="step"></span> Sum Insured </a> </li>
+                                        <li role="tab" class="disabled"><a href="#">
+                                                <span class="step"></span> Your Quote</a> </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <form class="form" action="#">
+                    <div class="content-block">
+                        <div class="row no-pad create-quote">
+                            <div class="col-sm-9 col-lg-10">
+                                <div class="question-panel">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">Property Details</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="question">
+                                            <div class="row clearfix">
+                                                <div class="form-group col-sm-12">
+                                                    <div class="question">
+                                                        <div class="row form-group label-right clearfix">
+                                                            <label class="col-sm-3 col-lg-1 label-control">Address</label>
+                                                            <div class="col-sm-6 col-lg-5">
+                                                                <div class="form-group has-feedback has-feedback-right field-lg mb-1" ng-hide="medicalConditions">
+                                                                    <input type="text" class="form-control" ng-disabled="addressNotFound || sameAsContact" placeholder="">
+                                                                    <div class="form-control-feedback">
+                                                                        <i class=" icon-search4 text-blue"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="pretty p-icon small-check" ng-hide="medicalConditions">
+                                                                    <input type="checkbox" ng-model="addressNotFound" ng-disabled="sameAsContact">
+                                                                    <div class="state" name="a1">
+                                                                        <i class="icon icon-checkmark3"></i>
+                                                                        <label class="small-check-label">I can't find address</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row question-group label-right" ng-hide="medicalConditions">
+                                                            <div class="col-lg-6">
+                                                                <div class="row form-group clearfix">
+                                                                    <label class="col-sm-5 col-lg-5 label-control">Address Line 1 <span class="required">*</span></label>
+                                                                    <div class="col-sm-7 col-lg-7">
+                                                                        <input type="text" class="form-control field-md" ng-disabled="!addressNotFound">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="row form-group clearfix">
+                                                                    <label class="col-sm-5 col-lg-5 label-control">Address Line 2 </label>
+                                                                    <div class="col-sm-7 col-lg-7">
+                                                                        <input type="text" class="form-control field-md" ng-disabled="!addressNotFound" value="" disabled="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="row form-group clearfix">
+                                                                    <label class="col-sm-5 col-lg-5 label-control">Postcode <span class="required">*</span></label>
+                                                                    <div class="col-sm-7 col-lg-7">
+                                                                        <input type="text" class="form-control field-md" ng-disabled="!addressNotFound" value="" disabled="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="row form-group clearfix">
+                                                                    <label class="col-sm-5 col-lg-5 label-control">Suburb</label>
+                                                                    <div class="col-sm-7 col-lg-7">
+                                                                        <input type="text" class="form-control field-md" ng-disabled="!addressNotFound" disabled="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="row form-group clearfix">
+                                                                    <label class="col-sm-5 col-lg-5 label-control">State <span class="required">*</span></label>
+                                                                    <div class="col-sm-7 col-lg-7">
+                                                                        <input type="text" class="form-control field-md" ng-disabled="!addressNotFound" disabled="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label class="label-control">Year Built</label>
+                                                <div class="position-relative field-sm">
+                                                    <div class="form-group has-feedback has-feedback-left field-md">
+                                                        <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                                        <div class="form-control-feedback">
+                                                            <i class="icon-calendar text-blue"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label class="label-control">No. of Floors (Ground & Above)</label>
+                                                <div class="handle-counter" id="handleCounter">
+                                                    <a class="counter-minus btn btn-primary">-</a>
+                                                    <input type="text" value="1" class="form-control">
+                                                    <a class="counter-plus btn btn-primary">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label class="label-control">No. of Basements </label>
+                                                <div class="handle-counter" id="handleCounter">
+                                                    <a class="counter-minus btn btn-primary">-</a>
+                                                    <input type="text" value="1" class="form-control">
+                                                    <a class="counter-plus btn btn-primary">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label class="label-control">No. of Residential Lots </label>
+                                                <div class="handle-counter" id="handleCounter">
+                                                    <a class="counter-minus btn btn-primary">-</a>
+                                                    <input type="text" value="1" class="form-control">
+                                                    <a class="counter-plus btn btn-primary">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label class="label-control">No. of Commercial Lots </label>
+                                                <div class="handle-counter" id="handleCounter">
+                                                    <a class="counter-minus btn btn-primary">-</a>
+                                                    <input type="text" value="1" class="form-control">
+                                                    <a class="counter-plus btn btn-primary">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label class="label-control">Commercial Floor Space Percentage and occupants </label>
+                                                <div class="handle-counter" id="handleCounter">
+                                                    <a class="counter-minus btn btn-primary">-</a>
+                                                    <input type="text" value="1" class="form-control">
+                                                    <a class="counter-plus btn btn-primary">+</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label class="label-control">Are there any lots being used for holiday letting?</label>
+                                                <div class="radio-toggle">
+                                                    <div class="btn-radio">
+                                                        <input type="radio" name="8" id="7" ng-model="holidayLetting" ng-value="false">
+                                                        <label for="7"> No</label>
+                                                    </div>
+                                                    <div class="btn-radio">
+                                                        <input type="radio" name="8" id="9" ng-model="holidayLetting" ng-value="true">
+                                                        <label for="9">Yes</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group sub-questions" ng-show="holidayLetting">
+                                                    <label class="label-control">If Yes, please confirm the % of lots used for short term holiday letting </label>
+                                                    <textarea class="form-control field-lg" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label class="label-control">Is there an on site Building Manager?
+                                                </label>
+                                                <div class="radio-toggle">
+                                                    <div class="btn-radio">
+                                                        <input type="radio" name="9" id="10">
+                                                        <label for="10"> No</label>
+                                                    </div>
+                                                    <div class="btn-radio">
+                                                        <input type="radio" name="9" id="11">
+                                                        <label for="11">Yes</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Does the strata have Kitchen, Dining Facilities &/or Room Service? (Please provide details) </label>
+                                                <textarea class="form-control field-lg" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="question-panel">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">Property-Construction</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row clearfix">
+                                            <div class="form-group col-sm-4">
+                                                <label class="label-control">Wall Construction<span class="required">*</span></label>
+                                                <select class="form-control field-md">
+                                                    <option disabled="" selected="" hidden="">Select</option>
+                                                    <option> Brick/Masonry</option>
+                                                    <option> Concrete-Reinforced </option>
+                                                    <option> Brick Veneer </option>
+                                                    <option> Iron/Steel </option>
+                                                    <option> Asbestos Sheeting </option>
+                                                    <option> Timber Wood </option>
+                                                    <option> Sandwich Panel/EPS (if more than 15%) </option>
+                                                    <option> Glass </option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-sm-4">
+                                                <label class="label-control">Roof Construction<span class="required">*</span></label>
+                                                <select class="form-control field-md">
+                                                    <option disabled="" selected="" hidden="">Select</option>
+                                                    <option> Reinforced Concrete with Membrane</option>
+                                                    <option> Tiles(Concrete/Clay) </option>
+                                                    <option> Iron/Steel </option>
+                                                    <option> Timber /Wood</option>
+                                                    <option> Asbestos</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-sm-4">
+                                                <label class="label-control">Floor Construction<span class="required">*</span></label>
+                                                <select class="form-control field-md">
+                                                    <option disabled="" selected="" hidden="">Select</option>
+                                                    <option> Concrete-Reinforced</option>
+                                                    <option> Timber/Wood </option>
+                                                    <option> Iron/Steel </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Fire Protection</label>
+                                                <div class="row ml-2">
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input name="a1" type="checkbox">
+                                                        <div class="state">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Extinguishers</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Fire Alarm-Local</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Fire Alarm - Full-time Monitored</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Hose Reels </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Smoke Detectors - Local</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Smoke Detectors - Full-time Monitored</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Sprinklers - AS2118</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Sprinklers - Dual Supply </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Security</label>
+                                                <div class="row ml-2">
+                                                    <div class="pretty p-icon small-check col-xs-12 col-lg-4 col-sm-6 mt-1 mr-0">
+                                                        <input name="a1" type="checkbox">
+                                                        <div class="state">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Bars/Grilles/Mesh </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Bollards - Fitted</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Burglar Alarm - Local </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Burglar Alarm - Full-time Monitored </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Deadlocks on External Doors </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">On-site Caretaker</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Security Cameras - Internal </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Security Cameras - External </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Security Patrols </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pretty p-icon small-check col-xs-12 col-sm-6 col-lg-4 mt-1 mr-0">
+                                                        <input type="checkbox">
+                                                        <div class="state" name="a1">
+                                                            <i class="icon icon-checkmark3"></i>
+                                                            <label class="small-check-label">Window Locks </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Is there any other fire protection or security at the risk? </label>
+                                                <textarea class="form-control field-lg" rows="3"></textarea>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Is the Building (or part of the Building) Heritage Listed? <span class="required">*</span> </label>
+                                                <div class="mb-2">
+                                                    <div class="radio-toggle">
+                                                        <div class="btn-radio">
+                                                            <input type="radio" name="8" id="7" ng-model="heritage" ng-value="false">
+                                                            <label for="7"> No</label>
+                                                        </div>
+                                                        <div class="btn-radio">
+                                                            <input type="radio" name="8" id="9" ng-model="heritage" ng-value="true">
+                                                            <label for="9">Yes</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-questions" ng-show="heritage">
+                                                    <label class="label-control">If Yes, please give details (Heritage) </label>
+                                                    <textarea class="form-control field-lg" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Has the Building been refurbished? <span class="required">*</span> </label>
+                                                <div class="mb-2">
+                                                    <div class="radio-toggle">
+                                                        <div class="btn-radio">
+                                                            <input type="radio" name="refurbished" id="r7" ng-model="refurbished" ng-value="false">
+                                                            <label for="r7"> No</label>
+                                                        </div>
+                                                        <div class="btn-radio">
+                                                            <input type="radio" name="refurbished" id="r9" ng-model="refurbished" ng-value="true">
+                                                            <label for="r9">Yes</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-questions" ng-show="refurbished">
+                                                    <label class="label-control">If Yes, please give details (refurbished) </label>
+                                                    <textarea class="form-control field-lg" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Has Compliance / Certification / Occupancy been issued? </label>
+                                                <div class="mb-2">
+                                                    <div class="radio-toggle">
+                                                        <div class="btn-radio">
+                                                            <input type="radio" name="compliance" id="c7" ng-model="compliance" ng-value="true">
+                                                            <label for="c7"> No</label>
+                                                        </div>
+                                                        <div class="btn-radio">
+                                                            <input type="radio" name="compliance" id="c9" ng-model="compliance" ng-value="false">
+                                                            <label for="c9">Yes</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-questions" ng-show="compliance">
+                                                    <label class="label-control">If No, please give details (certificate of compliance) </label>
+                                                    <textarea class="form-control field-lg" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Is the Strata a single standalone building? </label>
+                                                <div class="mb-2">
+                                                    <div class="radio-toggle">
+                                                        <div class="btn-radio">
+                                                            <input type="radio" name="standalone" id="s7" ng-model="standalone" ng-value="true">
+                                                            <label for="s7"> No</label>
+                                                        </div>
+                                                        <div class="btn-radio">
+                                                            <input type="radio" name="standalone" id="s9" ng-model="standalone" ng-value="false">
+                                                            <label for="s9">Yes</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-questions" ng-show="standalone">
+                                                    <label class="label-control">If No, please give details (standalone) </label>
+                                                    <textarea class="form-control field-lg" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Are there any known hazards or defects on site or to the Building? <span class="required">*</span> </label>
+                                                <div class="mb-2">
+                                                    <div class="radio-toggle">
+                                                        <div class="btn-radio">
+                                                            <input type="radio" name="d8" id="d7" ng-model="defects" ng-value="false">
+                                                            <label for="d7"> No</label>
+                                                        </div>
+                                                        <div class="btn-radio">
+                                                            <input type="radio" name="d8" id="d9" ng-model="defects" ng-value="true">
+                                                            <label for="d9">Yes</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-questions" ng-show="defects">
+                                                    <label class="label-control">If Yes, please give details (Defects) </label>
+                                                    <textarea class="form-control field-lg" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Does the building have cladding? <span class="required">*</span> </label>
+                                                <div class="mb-2">
+                                                    <div class="radio-toggle">
+                                                        <div class="btn-radio">
+                                                            <input type="radio" name="cladding" id="cd7" ng-model="cladding" ng-value="false">
+                                                            <label for="cd7"> No</label>
+                                                        </div>
+                                                        <div class="btn-radio">
+                                                            <input type="radio" name="cladding" id="cd9" ng-model="cladding" ng-value="true">
+                                                            <label for="cd9">Yes</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-questions" ng-show="cladding">
+                                                    <div>
+                                                        <label class="label-control">What material is the cladding?<span class="required">*</span></label>
+                                                        <select class="form-control field-md">
+                                                            <option disabled="" selected="" hidden="">Select</option>
+                                                            <option> Brick/Concrete</option>
+                                                            <option> Fibre cement </option>
+                                                            <option> Aluminium Composite Panel (Polyethylene) </option>
+                                                            <option> Aluminium Composite Panel (Polypropylene) </option>
+                                                            <option> Aluminium Composite Panel (Honeycomb) </option>
+                                                            <option>Other </option>
+                                                        </select>
+                                                    </div>
+                                                    <div>
+                                                        <label class="label-control">Do you know the name of the manufacturer? E.g. Alucobond<span class="required">*</span> </label>
+                                                        <div class="mb-2">
+                                                            <div class="radio-toggle">
+                                                                <div class="btn-radio">
+                                                                    <input type="radio" name="manufacturer" id="m7" ng-model="manufacturer" ng-value="false">
+                                                                    <label for="m7"> No</label>
+                                                                </div>
+                                                                <div class="btn-radio">
+                                                                    <input type="radio" name="manufacturer" id="m9" ng-model="manufacturer" ng-value="true">
+                                                                    <label for="m9">Yes</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-show="manufacturer">
+                                                        <label class="label-control">Name of manufacturer <span class="required"></span></label>
+                                                        <input type="text" class="form-control field-md" value="">
+                                                    </div>
+                                                    <div>
+                                                        <label class="label-control">Percentage of the building exterior that this material covers? <span class="required"></span></label>
+                                                        <input type="text" class="form-control field-md" value="%">
+                                                    </div>
+                                                    <div>
+                                                        <label class="label-control">Any other relevant information? </label>
+                                                        <textarea class="form-control field-lg" rows="3"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Date of latest valuation</label>
+                                                <div class="position-relative field-sm">
+                                                    <div class="form-group has-feedback has-feedback-left mb-0">
+                                                        <input type="text" class="form-control ui-autocomplete-input" placeholder="DD/MM/YYYY">
+                                                        <div class="form-control-feedback">
+                                                            <i class="icon-calendar text-blue"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Upload a copy of current Valuation</label>
+                                                <div class="file-upload btn btn-primary"> <span>
+                                                        <i class="icon-file-upload"></i>
+                                                        Upload</span>
+                                                    <input class="upload" type="file">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Additional Info</label>
+                                                <textarea class="form-control field-lg rows=" 3"></textarea>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Upload additional documentation </label>
+                                                <div class="file-upload btn btn-primary"> <span>
+                                                        <i class="icon-file-upload"></i>
+                                                        Upload</span>
+                                                    <input class="upload" type="file">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="question-panel">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">Facilities </h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label class="label-control">Does the property have any of the following on site? <span class="required">*</span></label>
+                                            <div class="row ml-2">
+                                                <div class="pretty p-icon small-check col-sm-6 col-xs-12 col-lg-4 mt-1 mr-0">
+                                                    <input name="a1" type="checkbox" ng-model="site" ng-value="true">
+                                                    <div class="state">
+                                                        <i class="icon icon-checkmark3"></i>
+                                                        <label class="small-check-label">No Facilities on site </label>
+                                                    </div>
+                                                </div>
+                                                <div class="pretty p-icon small-check col-sm-6 col-xs-12 col-lg-4 mt-1 mr-0">
+                                                    <input type="checkbox" ng-model="pools" ng-value="true">
+                                                    <div class="state" name="a1">
+                                                        <i class="icon icon-checkmark3"></i>
+                                                        <label class="small-check-label">Pools</label>
+                                                    </div>
+                                                </div>
+                                                <div class="pretty p-icon small-check col-sm-6 col-xs-12 col-lg-4 mt-1 mr-0">
+                                                    <input type="checkbox" ng-model="spa" ng-value="true">
+                                                    <div class="state" name="a1">
+                                                        <i class="icon icon-checkmark3"></i>
+                                                        <label class="small-check-label">Spas</label>
+                                                    </div>
+                                                </div>
+                                                <div class="pretty p-icon small-check col-sm-6 col-xs-12 col-lg-4 mt-1 mr-0">
+                                                    <input type="checkbox" ng-model="playEquip" ng-value="true">
+                                                    <div class="state" name="a1">
+                                                        <i class="icon icon-checkmark3"></i>
+                                                        <label class="small-check-label">Play Equipment </label>
+                                                    </div>
+                                                </div>
+                                                <div class="pretty p-icon small-check col-sm-6 col-xs-12 col-lg-4 mt-1 mr-0">
+                                                    <input type="checkbox" ng-model="gym" ng-value="true">
+                                                    <div class="state" name="a1">
+                                                        <i class="icon icon-checkmark3"></i>
+                                                        <label class="small-check-label">Gym</label>
+                                                    </div>
+                                                </div>
+                                                <div class="pretty p-icon small-check col-sm-6 col-xs-12 col-lg-4 mt-1 mr-0">
+                                                    <input type="checkbox" ng-model="tennis" ng-value="true">
+                                                    <div class="state" name="a1">
+                                                        <i class="icon icon-checkmark3"></i>
+                                                        <label class="small-check-label">Tennis Court</label>
+                                                    </div>
+                                                </div>
+                                                <div class="pretty p-icon small-check col-sm-6col-xs-12 col-lg-4 mt-1 mr-0">
+                                                    <input type="checkbox" ng-model="jetty" ng-value="true">
+                                                    <div class="state" name="a1">
+                                                        <i class="icon icon-checkmark3"></i>
+                                                        <label class="small-check-label">Jetty </label>
+                                                    </div>
+                                                </div>
+                                                <div class="pretty p-icon small-check col-sm-6 col-xs-12 col-lg-4 mt-1 mr-0">
+                                                    <input type="checkbox" ng-model="lake" ng-value="true">
+                                                    <div class="state" name="a1">
+                                                        <i class="icon icon-checkmark3"></i>
+                                                        <label class="small-check-label">Lake </label>
+                                                    </div>
+                                                </div>
+                                                <div class="pretty p-icon small-check col-sm-6 col-xs-12 col-lg-4 mt-1 mr-0">
+                                                    <input type="checkbox" ng-model="waterFeature" ng-value="true">
+                                                    <div class="state" name="a1">
+                                                        <i class="icon icon-checkmark3"></i>
+                                                        <label class="small-check-label">Water Feature</label>
+                                                    </div>
+                                                </div>
+                                                <div class="pretty p-icon small-check col-sm-6 col-xs-12 col-lg-4 mt-1 mr-0">
+                                                    <input type="checkbox" ng-model="other" ng-value="true">
+                                                    <div class="state" name="a1">
+                                                        <i class="icon icon-checkmark3"></i>
+                                                        <label class="small-check-label">Other</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sub-questions" ng-show="other || gym || lake || waterFeature || lake || jetty || tennis || playEquip ||spa || pools || site">
+                                                <div ng-show="other || gym || lake || waterFeature || lake || jetty || tennis || playEquip ||spa || pools || site">
+                                                    <label class="label-control">If Other, please specify below. </label>
+                                                    <textarea class="form-control field-lg rows=" 3"></textarea>
+                                                </div>
+                                                <div ng-show="waterFeature">
+                                                    <label class="label-control">Does the property have lifts? If yes, please confirm how many in the space below. </label>
+                                                    <textarea class="form-control field-lg rows=" 3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label-control">Does the property have a Car Stacker, Chiller, Cooling Towers or any other large machinery? <span class="required">*</span> </label>
+                                            <div class="mb-2">
+                                                <div class="radio-toggle">
+                                                    <div class="btn-radio">
+                                                        <input type="radio" name="largeMachinery" id="lm7" ng-model="largeMachinery" ng-value="false">
+                                                        <label for="lm7"> No</label>
+                                                    </div>
+                                                    <div class="btn-radio">
+                                                        <input type="radio" name="largeMachinery" id="lm9" ng-model="largeMachinery" ng-value="true">
+                                                        <label for="lm9">Yes</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sub-questions" ng-show="largeMachinery">
+                                                <div>
+                                                    <label class="label-control">If yes, please detail in the space provided below. </label>
+                                                    <textarea class="form-control field-lg" rows="3"></textarea>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <label class="label-control">If yes, please upload any Maintenance Agreements</label>
+                                                    </span><input class="upload" type="file">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row quote-btn-group ">
+                                    <div class="col-xs-6 ">
+                                        <a href="create-quote-residental.html" class="btn btn-primary-outline"> <i class="icon-arrow-left7 mr-1 "></i> <span>Previous</span> </a>
+                                    </div>
+                                    <div class="col-xs-6 text-right ">
+                                        <a href="create-quote-residental-3.html" class="btn btn-primary "> Next <i class="icon-arrow-right7 mr-1 "></i> </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-lg-2 stickWidth">
+                                <div class="right-fixed-panel">
+                                    <div class="content-block policy-actions">
+                                        <div class="policy-details">
+                                            <p><span>Client</span> William Jack </p>
+                                            <p><span>Effective Date</span> 10/01/2019 </p>
+                                            <p><span>Expiry Date</span> 10/01/2020 </p>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-grey-outline btn-sm btn-block"> <i class="icon-floppy-disk font-medium-1 mr-1 "></i> Save &amp; Exit </a>
+                                    <a href="#" class="btn btn-grey-outline btn-sm btn-block" data-toggle="modal" data-target="#discard"><i class=" icon-bin font-medium-3"></i> Discard </a>
+                                </div>
+                            </div>
+                            <div id="discard" class="modal fade moda-sm">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <div class="alert-warning-center text-center">
+                                                <a href="#" class="icon"><i class="icon-info3"></i></a>
+                                                <p class="text-semibold mb-4 font-medium-3">Are you sure you want to discard?</p>
+                                                <a href="add-new-user.html" class="btn btn-grey-outline" data-dismiss="modal">No</a>
+                                                <a href="create-quote.html" class="btn btn-primary">Yes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- /main content -->
+            </div>
+            <!-- /page content -->
+        </div>
+        <!--************ End Page Container *********-->
+        <script type="text/javascript">
+        $(function() {
+
+            if ($(window).width() > 768) {
+                var sidebar = $('.right-fixed-panel');
+                var top = sidebar.offset().top;
+                var sidebarWidth = $('.stickWidth').width();
+                var lastScrollTop = 0
+                $(window).scroll(function(event) {
+                    var y = $(this).scrollTop();
+                    if (y >= 5) {
+                        sidebar.addClass('sticky');
+                        var sidebarWidth = $('.stickWidth').width();
+                        sidebar.css({ width: sidebarWidth + "px " });
+                    } else {
+                        sidebar.removeClass('sticky');
+                        sidebar.css({ width: 'auto' });
+                    }
+                });
+            }
+        });
+        </script>
+        <script>
+        $(function($) {
+            var options = {
+                minimum: 1,
+                maximize: 100,
+            }
+            $('.handle-counter').handleCounter(options)
+        })
+        </script>
+</body>
+
+</html>

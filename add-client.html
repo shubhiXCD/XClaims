@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STRATA COMMUNITY INSURANCE</title>
+    <link href="css/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+
+<body>
+    <!--********* Header Starts *********-->
+     <div class="header">
+        <div class="navbar main-top">
+            <div class="cs-nav">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <div class="mobile-button pull-right">
+                            <a href="javascript:void(0)" class="navbar-toggler sidebar-large" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"><span class="icon"></span></a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-left ml-4">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle legitRipple btn-notification" data-toggle="dropdown">
+                            <i class="icon-bell3"></i>
+                            <span class="position-right"><span class="hide-xs">Notifications</span> <i class="caret"></i> </span>
+                            <span class="badge bg-warning-400">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-content width-350 dropdown-notification">
+                            <ul class="media-list dropdown-content-body">
+                                <li class="media">
+                                    <div class="media-body">
+                                        Quote Number <a href="create-quote-view.html" class="text-semibold">QCH12456</a> expires on 25/05/2019.
+                                        <div class="media-annotation">May 25, 12:47</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Method changed successfully for <a href="view-client.html" class="text-semibold"> Christopher Wallace </a>
+                                        <div class="media-annotation">May 13, 10:25</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Due on June 16 2016 for Policy Number <a href="view-policy.html" class="text-semibold">POL123456</a>
+                                        <div class="media-annotation"> May 12, 09:37</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-content-footer">
+                                <a href="#" data-popup="tooltip" title="" data-original-title="All Notifications"><i class="icon-menu display-block"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user">
+                        <a class="dropdown-toggle btn btn-primary-outline btn-header" data-toggle="dropdown">
+                            <span>Hi, <span class="hide-xs">Nathan Jacobson</span></span>
+                            <i class="caret"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="login.html"><i class="icon-switch2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--********* End Header *********-->
+    <!--********* Page Container Start *********-->
+    <div class="page-container">
+        <!-- Page content -->
+        <div class="page-content">
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+                    <a class="navbar-brand logo logo-white" href="index.html">
+                        <img src="assets/images/logo.png" class="logo-full">
+                    </a>
+                    <ul class="navigation navigation-main navigation-accordion">
+                        <li><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
+                        <li class="active-page"><a href="#" class="has-ul"><i class="icon-user-tie"></i> <span>Client Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-client.html"><span>Search Client</span></a></li>
+                                <li><a href="add-client.html"><span>Add New Client</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="has-ul"><i class="icon-profile"></i> <span>Claim Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-claim.html"><span>Search Claim</span></a></li>
+                                <li><a href="claim.html"><span>Make a Claim</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="search-policy.html"><i class="icon-search4"></i> <span>Search Policy</span></a></li>
+                        <li><a><i class="icon-credit-card"></i> <span>Make a Payment</span></a></li>
+                        <li><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Create New Quote</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+                <div class="page-title">
+                    <ul class="breadcrumb breadcrumb-caret">
+                        <li>Add Client</li>
+                    </ul>
+                </div>
+                <div class="panel panel-body no-header">
+                    <form class="form form-horizontal" action="#">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Type of Client</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <select class="form-control field-md">
+                                                    <option disabled="" selected="" hidden="">Select</option>
+                                                    <option>Individual</option>
+                                                    <option>Business</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">client Code</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <input type="text" class="form-control field-md" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">First Name</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <input type="text" class="form-control field-md" placeholder="" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Last Name</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <input type="text" class="form-control field-md" placeholder="" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Date Of Birth Team</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="form-group has-feedback has-feedback-left field-md">
+                                                            <input type="text" class="form-control ui-autocomplete-input" placeholder="DD/MM/YYYY">
+                                                            <div class="form-control-feedback">
+                                                                <i class="icon-calendar text-blue"></i>
+                                                            </div>
+                                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-divider form-title-2"><span>Contact Details</span></div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Phone</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <input type="text" class="form-control field-md" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Fax</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <input type="text" class="form-control field-md" placeholder="" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Email Address</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <input type="text" class="form-control field-md" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Website URL</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <input type="text" class="form-control field-md" placeholder="" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-divider form-title-2"><span>Address</span></div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Address Line 1</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <input type="text" class="form-control field-md" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Address Line 2</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <input type="text" class="form-control field-md" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">City</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <select class="form-control field-md">
+                                                    <option disabled="" selected="" hidden="" value="Select">Select</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">State</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <select class="form-control field-md">
+                                                    <option disabled="" selected="" hidden="" value="Select">Select</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Post Code</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <input type="text" class="form-control field-md" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">Country</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <select class="form-control field-md">
+                                                    <option disabled="" selected="" hidden="" value="Select">Select</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-divider form-title-2"><span>Other Details</span></div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">ABN</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <input type="text" class="form-control field-md" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-4 label-control">ITC</label>
+                                        <div class="col-sm-8 col-lg-8">
+                                            <div class="position-relative field-md">
+                                                <input type="text" class="form-control field-md" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-group text-right">
+                    <a href="#" class="btn btn-grey-outline"> <i class="icon-reset font-medium-3 mr-1"></i> Reset </a>
+                    <a href="#" class="btn btn-grey-outline search-table"> <i class="icon-plus3 mr-half font-medium-1"></i> Add Secondary Insured</a>
+                    <a href="#" class="btn btn-primary search-table" data-toggle="modal" data-target="#add-customer"> <i class="icon-checkmark4 mr-half font-small-2"></i> Save</a>
+                </div>
+                <div id="add-customer" class="modal fade moda-sm">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="alert-warning-center text-center">
+                                    <a href="#" class="icon"><i class="icon-info3"></i></a>
+                                    <p class="text-semibold mb-4 font-medium-3">Are you sure you want to add this client?</p>
+                                    <a href="add-new-user.html" class="btn btn-grey-outline" data-dismiss="modal">No</a>
+                                    <a class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#add-customer-success">Yes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="add-customer-success" class="modal fade moda-sm">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="alert-success-center text-center">
+                                    <a href="#" class="icon"><i class="icon-checkmark3"></i></a>
+                                    <p class="text-semibold mb-4 font-large-2">Client successfully added.</p>
+                                    <a href="view-client.html" class="btn btn-success btn-shadow-1">OK</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /page content -->
+    </div>
+    <!--************ End Page Container *********-->
+</body>
+
+</html>

@@ -481,7 +481,12 @@ table.dataTable thead .sorting_desc_disabled {
 }
 
 .dataTables_wrapper .dataTables_info {
+   text-align: left;
+    padding-top: 5px;
     float: left;
+    font-size: 12px;
+    font-style: italic;
+    color: #9c9c9c;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
@@ -741,7 +746,7 @@ table.dataTable thead .sorting_desc_disabled {
     color: #FFFFFF;
     background-color: #df5206;
     border-color: #df5206;
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-decoration: none;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
     background: #df5105;
@@ -796,9 +801,9 @@ table.dataTable thead .sorting_desc_disabled {
 }
 
 .btn.btn-primary-outline {
-    color: #1ea9e1;
+    color: #f08321;
     background-color: #fff;
-    border: 1px solid #1ea9e1;
+    border: 1px solid #f08321;
     box-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -1563,7 +1568,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 15px;
-    padding-top: 58px;
+    padding-top: 75px;
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
@@ -3914,7 +3919,7 @@ body.sidebar-xs .content-wrapper {
 }
 
 .content-wrapper.quote {
-    padding-top: 60px !important;
+    padding-top: 80px !important;
 }
 
 @media (max-width: 768px) {
@@ -4417,7 +4422,7 @@ body.sidebar-xs .content-wrapper {
     margin: 0px -20px;
     padding: 5px 20px;
     position: fixed;
-    top: 54px;
+    top: 75px;
     z-index: 99;
     background-color: #eef1f8;
     box-shadow: 0 1px 5px 0 rgba(37, 42, 45, 0.18);
@@ -4501,7 +4506,7 @@ body.sidebar-xs .content-wrapper {
 }
 
 .wizard>.steps>ul>li.current>a {
-    color: #333;
+    color: #000;
     cursor: default;
     margin-top: 0px;
     padding-top: 22px;
@@ -4880,7 +4885,7 @@ body.sidebar-xs .content-wrapper {
 }
 
 .label-control {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
 }
 
@@ -6046,7 +6051,7 @@ label.display-block {
 
 .question-panel {
     margin-bottom: 25px;
-    border: 1px solid #dde1ea;
+    border: 1px solid #1ea9e1;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -6059,13 +6064,13 @@ label.display-block {
     border-bottom: none;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    background-color: #e98300;
+    background-color: #1ea9e1;
 }
 
 .question-panel .panel-heading h5.panel-title {
     font-size: 15px;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 1px;
     line-height: 18px;
     margin-bottom: 0;
@@ -8756,8 +8761,8 @@ span.multiselect-native-select select {
     margin-bottom: 0px;
     font-weight: 500;
     display: block;
-    text-transform: uppercase;
-    font-size: 13px;
+    text-transform: capitalize;
+    font-size: 14px;
     letter-spacing: 0.3px;
 }
 

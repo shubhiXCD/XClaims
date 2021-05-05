@@ -102,11 +102,11 @@
                     </a>
                     <ul class="navigation navigation-main navigation-accordion">
                         <li class="active-page"><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
-                        <li><a href="worklist.html"><i class="icon-profile"></i> <span>Claim Notification</span></a></li>
+                        <li><a href="claim-noti.html"><i class="icon-profile"></i> <span>Claim Notification</span></a></li>
                         <!-- <li><a href="search-policy.html"><i class="icon-file-text"></i> <span>Claim Recovery</span></a></li> -->
                         <li><a><i class="icon-clipboard"></i> <span>Claim Enquiry</span></a></li>
                         <!-- <li><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Policy Enquiry</span></a></li> -->
-                        <li><a href="create-quote.html"><i class="icon-credit-card"></i> <span>Claim Billing</span></a></li>
+                        <li><a href="worklist.html"><i class="icon-credit-card"></i> <span>Claim Billing</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -181,132 +181,39 @@
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <!-- <ul class="row clearfix home-tabs nav nav-tabs no-border">
-                                    <li class="col-sm-6 col-md-3 col20"><a class="active" data-toggle="tab" href="#tab1"><i class="icon-new-tab2 mr-1"></i> New Claims</a></li>
-                                    <li class="col-sm-6 col-md-3 col20"><a data-toggle="tab" href="#tab2"> <i class="icon-history mr-1"></i>Under Review</a></li>
-                                    <li class="col-sm-6 col-md-3 col20"><a data-toggle="tab" href="#tab1"> <i class="icon-cash mr-1"></i>Payment Due</a></li>
-                                    <li class="col-sm-6 col-md-3 col20"><a data-toggle="tab" href="#tab1"> <i class="icon-user-cancel mr-1"></i>Suspended</a></li>
-                                    <li class="col-sm-6 col-md-3 col20"><a data-toggle="tab" href="#tab2"> <i class="icon-lock mr-1"></i> Closed</a></li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div id="tab1" class="tab-pane fade in active">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped" id="example2">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Claim Number</th>
-                                                        <th>Client Name</th>
-                                                        <th>Claim Date</th>
-                                                        <th>Product</th>
-                                                        <th>Claim Status</th>
-                                                        <th>Estimate Amount</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><a href="pending-cancellation.html" class="text-semibold">CLMOT0098177</a></td>
-                                                        <td>William Jack</td>
-                                                        <td>09/02/2021</td>
-                                                        <td>Personal Auto</td>
-                                                        <td>Initiated</td>
-                                                        <td>USD 950</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="pending-cancellation.html" class="text-semibold">CLMOT0085619</a></td>
-                                                        <td>Henry Cooper</td>
-                                                        <td>14/02/2021</td>
-                                                        <td>Simplified Travel</td>
-                                                        <td>In Progress</td>
-                                                        <td>USD 1,970</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="pending-cancellation.html" class="text-semibold">CLMOT0090183</a></td>
-                                                        <td>James Thomas</td>
-                                                        <td>30/04/2021</td>
-                                                        <td>Family PA</td>
-                                                        <td>Suspended</td>
-                                                        <td>USD 6,280</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div id="tab2" class="tab-pane fade">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped" id="example2">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Claim Number</th>
-                                                        <th>Client Name</th>
-                                                        <th>Claim Date</th>
-                                                        <th>Product</th>
-                                                        <th>Claim Status</th>
-                                                        <th>Estimate Amount</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><a href="pending-cancellation.html" class="text-semibold">CLMOT0098177</a></td>
-                                                        <td>William Jack</td>
-                                                        <td>09/02/2021</td>
-                                                        <td>Personal Auto</td>
-                                                        <td>Initiated</td>
-                                                        <td>USD 950</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="pending-cancellation.html" class="text-semibold">CLMOT0085619</a></td>
-                                                        <td>Henry Cooper</td>
-                                                        <td>14/02/2021</td>
-                                                        <td>Simplified Travel</td>
-                                                        <td>In Progress</td>
-                                                        <td>USD 1,970</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="pending-cancellation.html" class="text-semibold">CLMOT0090183</a></td>
-                                                        <td>James Thomas</td>
-                                                        <td>30/04/2021</td>
-                                                        <td>Family PA</td>
-                                                        <td>Suspended</td>
-                                                        <td>USD 6,280</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div> -->
                                 <ul class="row clearfix home-tabs">
                                     <li class="col-sm-6 col-md-3 col20">
-                                        <input type="checkbox" name="taskType" value="1" id="pt1" ng-model="taskType" checked="">
+                                        <input type="checkbox" name="taskType1" value="1" id="pt1" checked="">
                                         <label for="pt1">
                                             <a><i class="icon-new-tab2 mr-1"></i> New Claims</a>
                                         </label>
                                     </li>
                                     <li class="col-sm-6 col-md-3 col20">
-                                        <input type="checkbox" name="taskType" value="2" id="pt2" ng-model="taskType" checked="">
+                                        <input type="checkbox" name="taskType2" value="2" id="pt2" checked="">
                                         <label for="pt2">
                                             <a><i class="icon-history mr-1"></i>Under Review</a>
                                         </label>
                                     </li>
                                     <li class="col-sm-6 col-md-3 col20">
-                                        <input type="checkbox" name="taskType" value="3" id="pt3" ng-model="taskType">
+                                        <input type="checkbox" name="taskType3" value="3" id="pt3">
                                         <label for="pt3">
                                             <a><i class="icon-cash mr-1"></i>Payment Due</a>
                                         </label>
                                     </li>
                                     <li class="col-sm-6 col-md-3 col20">
-                                        <input type="checkbox" name="taskType" value="4" id="pt4" ng-model="taskType">
+                                        <input type="checkbox" name="taskType4" value="4" id="pt4">
                                         <label for="pt4">
                                             <a><i class="icon-user-cancel mr-1"></i>Suspended</a>
                                         </label>
                                     </li>
                                     <li class="col-sm-6 col-md-3 col20">
-                                        <input type="checkbox" name="taskType" value="5" id="pt5" ng-model="taskType">
+                                        <input type="checkbox" name="taskType5" value="5" id="pt5">
                                         <label for="pt5">
                                             <a><i class="icon-lock mr-1"></i> Closed</a>
                                         </label>
                                     </li>
                                 </ul>
-                                <div class="table-responsive">
+                                <div class="scrollbar-inner">
                                     <table class="table table-striped" id="example2">
                                         <thead>
                                             <tr>
@@ -319,7 +226,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr ng-show="taskType == 1">
+                                            <tr class="taskType1" >
                                                 <td><a href="3" class="text-semibold">CLMOT0098177</a></td>
                                                 <td>William Jack</td>
                                                 <td>09/02/2021</td>
@@ -327,7 +234,7 @@
                                                 <td>Initiated</td>
                                                 <td>USD 950</td>
                                             </tr>
-                                            <tr ng-show="taskType == 1">
+                                            <tr class="taskType1" >
                                                 <td><a href="#" class="text-semibold">CLMOT0085619</a></td>
                                                 <td>Henry Cooper</td>
                                                 <td>14/02/2021</td>
@@ -335,15 +242,15 @@
                                                 <td>Initiated</td>
                                                 <td>USD 1,970</td>
                                             </tr>
-                                           <!--  <tr ng-show="taskType == 1">
+                                           <tr class="taskType1">
                                                 <td><a href="#" class="text-semibold">CLMOT0090183</a></td>
                                                 <td>James Thomas</td>
                                                 <td>30/04/2021</td>
                                                 <td>Family PA</td>
                                                 <td>Initiated</td>
                                                 <td>USD 6,280</td>
-                                            </tr> -->
-                                            <tr ng-show="taskType == 2">
+                                            </tr>
+                                            <tr class="taskType2" >
                                                 <td><a href="3" class="text-semibold">CLMOT0098177</a></td>
                                                 <td>William Jack</td>
                                                 <td>09/02/2021</td>
@@ -351,7 +258,7 @@
                                                 <td>In Progress</td>
                                                 <td>USD 950</td>
                                             </tr>
-                                            <tr ng-show="taskType == 2">
+                                            <tr class="taskType2" >
                                                 <td><a href="#" class="text-semibold">CLMOT0085619</a></td>
                                                 <td>Henry Cooper</td>
                                                 <td>14/02/2021</td>
@@ -359,15 +266,8 @@
                                                 <td>In Progress</td>
                                                 <td>USD 1,970</td>
                                             </tr>
-                                            <!-- <tr ng-show="taskType == 2">
-                                                <td><a href="#" class="text-semibold">CLMOT0090183</a></td>
-                                                <td>James Thomas</td>
-                                                <td>30/04/2021</td>
-                                                <td>Family PA</td>
-                                                <td>In Progress</td>
-                                                <td>USD 6,280</td>
-                                            </tr>
-                                            <tr ng-show="taskType == 3">
+                                            
+                                            <tr class="taskType3" style="display: none;">
                                                 <td><a href="3" class="text-semibold">CLMOT0098177</a></td>
                                                 <td>William Jack</td>
                                                 <td>09/02/2021</td>
@@ -375,15 +275,9 @@
                                                 <td>Payment Due</td>
                                                 <td>USD 950</td>
                                             </tr>
-                                            <tr ng-show="taskType == 3">
-                                                <td><a href="#" class="text-semibold">CLMOT0085619</a></td>
-                                                <td>Henry Cooper</td>
-                                                <td>14/02/2021</td>
-                                                <td>Simplified Travel</td>
-                                                <td>Payment Due</td>
-                                                <td>USD 1,970</td>
-                                            </tr>
-                                            <tr ng-show="taskType == 3">
+                                              
+                                           
+                                            <tr class="taskType3" style="display: none;">
                                                 <td><a href="#" class="text-semibold">CLMOT0090183</a></td>
                                                 <td>James Thomas</td>
                                                 <td>30/04/2021</td>
@@ -391,15 +285,8 @@
                                                 <td>Suspended</td>
                                                 <td>USD 6,280</td>
                                             </tr>
-                                            <tr ng-show="taskType == 4">
-                                                <td><a href="3" class="text-semibold">CLMOT0098177</a></td>
-                                                <td>William Jack</td>
-                                                <td>09/02/2021</td>
-                                                <td>Personal Auto</td>
-                                                <td>Suspended</td>
-                                                <td>USD 950</td>
-                                            </tr>
-                                            <tr ng-show="taskType == 4">
+                                           
+                                            <tr class="taskType4" style="display: none;">
                                                 <td><a href="#" class="text-semibold">CLMOT0085619</a></td>
                                                 <td>Henry Cooper</td>
                                                 <td>14/02/2021</td>
@@ -407,7 +294,7 @@
                                                 <td>Suspended</td>
                                                 <td>USD 1,970</td>
                                             </tr>
-                                            <tr ng-show="taskType == 4">
+                                            <tr class="taskType4" style="display: none;">
                                                 <td><a href="#" class="text-semibold">CLMOT0090183</a></td>
                                                 <td>James Thomas</td>
                                                 <td>30/04/2021</td>
@@ -415,7 +302,7 @@
                                                 <td>Suspended</td>
                                                 <td>USD 6,280</td>
                                             </tr>
-                                            <tr ng-show="taskType == 5">
+                                            <tr class="taskType5" style="display: none;">
                                                 <td><a href="3" class="text-semibold">CLMOT0098177</a></td>
                                                 <td>William Jack</td>
                                                 <td>09/02/2021</td>
@@ -423,7 +310,7 @@
                                                 <td>Closed</td>
                                                 <td>USD 950</td>
                                             </tr>
-                                            <tr ng-show="taskType == 5">
+                                            <tr class="taskType5" style="display: none;">
                                                 <td><a href="#" class="text-semibold">CLMOT0085619</a></td>
                                                 <td>Henry Cooper</td>
                                                 <td>14/02/2021</td>
@@ -431,14 +318,14 @@
                                                 <td>Closed</td>
                                                 <td>USD 1,970</td>
                                             </tr>
-                                            <tr ng-show="taskType == 5">
+                                            <tr class="taskType5" style="display: none;">
                                                 <td><a href="#" class="text-semibold">CLMOT0090183</a></td>
                                                 <td>James Thomas</td>
                                                 <td>30/04/2021</td>
                                                 <td>Family PA</td>
                                                 <td>Closed</td>
                                                 <td>USD 6,280</td>
-                                            </tr> -->
+                                            </tr> 
                                         </tbody>
                                     </table>
                                 </div>
@@ -453,19 +340,53 @@
     <!-- /page content -->
     </div>
     <!--************ End Page Container *********-->
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
     $(document).ready(function() {
-         $('input:checkbox[name="customer2"]').change(function() {
-        if ($(this).val() == 1) {
-            $(".cust-name2").show();
+         $('input:checkbox[name="taskType1"]').change(function() {
+        if ($(this).is(":checked")) {
+            $(".taskType1").show();
 
         } else {
-            $(".cust-name2").hide();
+            $(".taskType1").hide();
+        }
+    });
+
+          $('input:checkbox[name="taskType2"]').change(function() {
+        if ($(this).is(":checked")) {
+            $(".taskType2").show();
+
+        } else {
+            $(".taskType2").hide();
+        }
+    });
+           $('input:checkbox[name="taskType3"]').change(function() {
+        if ($(this).is(":checked")) {
+            $(".taskType3").show();
+
+        } else {
+            $(".taskType3").hide();
+        }
+    });
+
+            $('input:checkbox[name="taskType4"]').change(function() {
+        if ($(this).is(":checked")) {
+            $(".taskType4").show();
+
+        } else {
+            $(".taskType4").hide();
+        }
+    });
+             $('input:checkbox[name="taskType5"]').change(function() {
+        if ($(this).is(":checked")) {
+            $(".taskType5").show();
+
+        } else {
+            $(".taskType5").hide();
         }
     });
 
     });
-    </script> -->
+    </script>
     <script>
     window.onload = function() {};
 
@@ -647,7 +568,7 @@
             "bAutoWidth": false,
             "bFilter": false,
             "sPaginationType": "full_numbers",
-
+ dom: '<"clearfix"l><"scrollbar-inner"rt><"clearfix"ip>',
             "bInfo": false,
             language: {
                 paginate: {
@@ -658,8 +579,8 @@
                 }
             },
             "lengthMenu": [
-                [3, 6, 9, -1],
-                [3, 6, 6, "All"]
+               [5, 10, 20, 30],
+            [5, 10, 20, 30]
             ]
         });
     });

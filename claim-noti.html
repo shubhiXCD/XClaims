@@ -18,7 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 
-<body ng-app="myApp" ng-controller="MyCtrl" class="bg-white sidebar-xs">
+<body ng-app="myApp" ng-controller="MyCtrl">
     <script type='text/javascript'>
     var myApp = angular.module('myApp', []);
     myApp.controller('MyCtrl', function($scope) {
@@ -101,12 +101,12 @@
                         <img src="assets/images/logo.png" class="logo-full">
                     </a>
                     <ul class="navigation navigation-main navigation-accordion">
-                       <li class="active-page"><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
-                        <li><a href="worklist.html"><i class="icon-profile"></i> <span>Worklist Detail View</span></a></li>
-                        <li><a href="search-policy.html"><i class="icon-file-text"></i> <span>Claim Recovery</span></a></li>
+                        <li ><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
+                        <li class="active-page"><a href="claim-noti.html"><i class="icon-profile"></i> <span>Claim Notification</span></a></li>
+                        <!-- <li><a href="search-policy.html"><i class="icon-file-text"></i> <span>Claim Recovery</span></a></li> -->
                         <li><a><i class="icon-clipboard"></i> <span>Claim Enquiry</span></a></li>
-                        <li><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Policy Enquiry</span></a></li>
-                        <li><a href="create-quote.html"><i class="icon-credit-card"></i> <span>Claim Billing</span></a></li>
+                        <!-- <li><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Policy Enquiry</span></a></li> -->
+                        <li><a href="worklist.html"><i class="icon-credit-card"></i> <span>Claim Billing</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -115,108 +115,78 @@
             <div class="content-wrapper">
                 <div class="page-title">
                     <ul class="breadcrumb breadcrumb-caret">
-                        <li>Worklist Detail View</li>
+                        <li>Search Policy</li>
                     </ul>
                 </div>
-                <div class="">
-                    <div class="scrollbar-inner mb-1">
-                        <table class="table table-striped">
+                <div class="panel panel-body no-header">
+                    <form class="form form-horizontal" action="#">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-5 label-control">Policy Number</label>
+                                        <div class="col-sm-8 col-lg-7">
+                                            <input type="text" class="form-control field-md" placeholder="" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-5 label-control">Client Phone/Email id</label>
+                                        <div class="col-sm-8 col-lg-7">
+                                            <div class="position-relative field-md">
+                                                <input type="text" class="form-control field-md" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group clearfix">
+                                        <label class="col-sm-4 col-lg-5 label-control">Address</label>
+                                        <div class="col-sm-8 col-lg-7">
+                                            <div class="position-relative field-md">
+                                                <input type="text" class="form-control field-md" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-group text-right">
+                    <a href="#" class="btn btn-grey-outline btn-reset"> <i class="icon-reset font-medium-3 mr-1"></i> Reset </a>
+                    <a href="#" class="btn btn-primary btn-search"> <i class="icon-search4 mr-half font-medium-1"></i> Search</a>
+                </div>
+                <div class="mt-8 search-result-table" style="display: none;">
+                    <div class="scrollbar-inner">
+                        <table class="table table-striped" id="example">
                             <thead>
                                 <tr>
-                                    <th>Claim Number</th>
-                                    <th>Priority</th>
-                                    <th>Status</th>
-                                    <th>Claim Stage</th>
-                                    <th>Claim Initiated Date</th>
-                                    <th>Due Date</th>
-                                    <th>Claim Type</th>
-                                    <th>Estimate Amount</th>
-                                    <th>Last activity</th>
-                                    <th>Assigned By</th>
-                                    <th>Actions</th>
+                                    <th>Policy No.</th>
+                                    <th>Client Name</th>
+                                    <th>Policy Type</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                   
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><a href="#" class="text-semibold">CLMOT0098177</a></td>
-                                    <td>Medium</td>
-                                    <td><span class="label bg-success">Initiated</span></td>
-                                    <td>Notification</td>
-                                    <td>11/03/2021</td>
-                                    <td>30/04/21</td>
-                                    <td>Collision</td>
-                                    <td>USD 950</td>
-                                    <td>Claim Form Uploaded</td>
-                                    <td>System</td>
-                                    <td>
-                                        <ul class="icons-list">
-                                            <li class="dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="icon-menu4"></i>
-                                                </a>
-                                                <ul class="dropdown-menu dropdown-menu-right">
-                                                    <li><a href="#"><i class="icon-enter pull-right"></i>Delegate/Assign</a></li>
-                                                    <li><a href="#"><i class="icon-cross pull-right"></i> Suspend/Unsuspend</a></li>
-                                                    <li><a href="#"><i class="icon-files-empty pull-right"></i> Workflow</a></li>
-                                                    <li><a href="#"><i class="icon-pencil7 pull-right"></i> Notes</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
+                                    <td><a href="claim-noti1.html" class="text-semibold">POL12548</a></td>
+                                    <td>Henry Cooper</td>
+                                    <td>Annual Homeowners</td>
+                                    <td>01/07/2021</td>
+                                    <td>30/06/2023</td>
+                                    
                                 </tr>
                                 <tr>
-                                    <td><a href="#" class="text-semibold">CLMOT0085619</a></td>
-                                    <td>High</td>
-                                    <td><span class="label bg-primary">In Progress</span></td>
-                                    <td>Registration</td>
-                                    <td>19/04/2021</td>
-                                    <td>5/5/2021</td>
-                                    <td>Vehicle Repairs</td>
-                                    <td>USD 1,970</td>
-                                    <td>Garage assigned and claim verified</td>
-                                    <td>Joey</td>
-                                    <td>
-                                        <ul class="icons-list">
-                                            <li class="dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="icon-menu4"></i>
-                                                </a>
-                                                <ul class="dropdown-menu dropdown-menu-right">
-                                                    <li><a href="#"><i class="icon-enter pull-right"></i>Delegate/Assign</a></li>
-                                                    <li><a href="#"><i class="icon-cross pull-right"></i> Suspend/Unsuspend</a></li>
-                                                    <li><a href="#"><i class="icon-files-empty pull-right"></i> Workflow</a></li>
-                                                    <li><a href="#"><i class="icon-pencil7 pull-right"></i> Notes</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#" class="text-semibold">CLMOT0090183</a></td>
-                                    <td>Low</td>
-                                    <td><span class="label bg-danger">Suspended</span></td>
-                                    <td>Assessment</td>
-                                    <td>1/4/2021</td>
-                                    <td>3/5/2021</td>
-                                    <td>Third Party Damage</td>
-                                    <td>USD 6,280</td>
-                                    <td>Documents requested on 22/04/21</td>
-                                    <td>Jeremy</td>
-                                    <td>
-                                        <ul class="icons-list">
-                                            <li class="dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="icon-menu4"></i>
-                                                </a>
-                                                <ul class="dropdown-menu dropdown-menu-right">
-                                                   <li><a href="#"><i class="icon-enter pull-right"></i>Delegate/Assign</a></li>
-                                                    <li><a href="#"><i class="icon-cross pull-right"></i> Suspend/Unsuspend</a></li>
-                                                    <li><a href="#"><i class="icon-files-empty pull-right"></i> Workflow</a></li>
-                                                    <li><a href="#"><i class="icon-pencil7 pull-right"></i> Notes</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
+                                    <td><a href="claim-noti1.html" class="text-semibold">POL2214567</a></td>
+                                    <td>James Thomas</td>
+                                   <td>Annual Homeowners</td>
+                                    <td>01/07/2021</td>
+                                    <td>30/06/2023</td>
+                                    
                                 </tr>
                             </tbody>
                         </table>

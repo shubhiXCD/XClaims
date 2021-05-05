@@ -15,9 +15,21 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/graph.js"></script>
+     
 </head>
 
-<body class="bg-white">
+<body class="bg-white" ng-app="myApp" ng-controller="MyCtrl">
+ <script type='text/javascript'>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('MyCtrl', function($scope) {
+        $scope.setFile = function(element) {
+            $scope.$apply(function($scope) {
+                $scope.theFile = element.files[0];
+                $scope.sizeDis = false;
+            });
+        };
+    });
+    </script>
     <!--********* Header Starts *********-->
     <div class="header">
         <div class="navbar main-top">
@@ -66,7 +78,7 @@
                 <ul class="nav navbar-nav pull-right">
                     <li class="dropdown dropdown-user">
                         <a class="dropdown-toggle btn btn-primary-outline btn-header" data-toggle="dropdown">
-                            <span>Hi, <span class="hide-xs">Nathan Jacobson</span></span>
+                            <span>Hi, <span class="hide-xs">John</span></span>
                             <i class="caret"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right">
@@ -90,10 +102,10 @@
                     </a>
                     <ul class="navigation navigation-main navigation-accordion">
                         <li class="active-page"><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
-                        <li><a href="worklist.html"><i class="icon-profile"></i> <span>Worklist Detail View</span></a></li>
-                        <li><a href="search-policy.html"><i class="icon-file-text"></i> <span>Claim Recovery</span></a></li>
+                        <li><a href="worklist.html"><i class="icon-profile"></i> <span>Claim Notification</span></a></li>
+                        <!-- <li><a href="search-policy.html"><i class="icon-file-text"></i> <span>Claim Recovery</span></a></li> -->
                         <li><a><i class="icon-clipboard"></i> <span>Claim Enquiry</span></a></li>
-                        <li><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Policy Enquiry</span></a></li>
+                        <!-- <li><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Policy Enquiry</span></a></li> -->
                         <li><a href="create-quote.html"><i class="icon-credit-card"></i> <span>Claim Billing</span></a></li>
                     </ul>
                 </div>
@@ -103,23 +115,33 @@
             <div class="content-wrapper">
                 <div class="row mb-2 mt-2">
                     <div class="col-md-6 col-sm-6 col-xs-12 col-lg-3">
-                        <div class="info-box info-box-1"><span class="info-box-icon"><i class="icon-file-text"></i></span>
-                            <div class="info-box-content"><span class="info-box-text">All Quotes</span> <span class="info-box-number">958</span></div>
+                        <div class="info-box info-box-1"><span class="info-box-icon"><i class="icon-profile"></i></span>
+                            <div class="info-box-content"><span class="info-box-text">Valid open claims</span> <span class="info-box-number">5</span></div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12 col-lg-3">
-                        <div class="info-box info-box-2"><span class="info-box-icon"><i class="icon-profile"></i></span>
-                            <div class="info-box-content"><span class="info-box-text">All Bound Policies</span> <span class="info-box-number">628</span></div>
+                        <div class="info-box info-box-2"><span class="info-box-icon"><i class="icon-percent"></i></span>
+                            <div class="info-box-content"><span class="info-box-text">Loss Ratio</span> <span class="info-box-number">51.4</span></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12 col-lg-3">
+                    <!-- <div class="col-md-6 col-sm-6 col-xs-12 col-lg-3">
                         <div class="info-box info-box-3"><span class="info-box-icon"><i class="icon-file-text2"></i></span>
-                            <div class="info-box-content"><span class="info-box-text">All Bound Premium</span> <span class="info-box-number">$ 64,546</span></div>
+                            <div class="info-box-content"><span class="info-box-text">Rejection Ratio</span> <span class="info-box-number">$ 64,546</span></div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-lg-3">
+                        <div class="info-box info-box-5"><span class="info-box-icon"><i class="icon-cash"></i></span>
+                            <div class="info-box-content"><span class="info-box-text">Average Cost per Claim <span class="font-small-3 text-regular">(Auto)</span></span> <span class="info-box-number">$8,300</span></div>
                         </div>
                     </div>
+                    <!-- <div class="col-md-6 col-sm-6 col-xs-12 col-lg-3">
+                        <div class="info-box info-box-5"><span class="info-box-icon"><i class="icon-file-text2"></i></span>
+                            <div class="info-box-content"><span class="info-box-text">Claims Paid (last 30 days)</span> <span class="info-box-number">$ 64,546</span></div>
+                        </div>
+                    </div> -->
                     <div class="col-md-6 col-sm-6 col-xs-12 col-lg-3">
                         <div class="info-box info-box-4"><span class="info-box-icon"><i class=" icon-file-locked"></i></span>
-                            <div class="info-box-content"><span class="info-box-text">Closed Claim Counts</span> <span class="info-box-number">325</span></div>
+                            <div class="info-box-content"><span class="info-box-text">Claims Closed <span class="font-small-3 text-regular">(last 30 days)</span></span> <span class="info-box-number">3</span></div>
                         </div>
                     </div>
                 </div>
@@ -127,7 +149,7 @@
                     <div class="col-sm-7 col-lg-8">
                         <div class="panel panel-home match-height">
                             <div class="panel-heading mb-0">
-                                <h3 class="panel-title">Volume by Claims</h3>
+                                <h3 class="panel-title">Volume of Claims by Notification Month</h3>
                             </div>
                             <div class="panel-body">
                                 <div id="chartContainer1" style="height: 220px; width: 100%;"></div>
@@ -137,7 +159,8 @@
                     <div class="col-sm-5 col-lg-4">
                         <div class="panel panel-home match-height">
                             <div class="panel-heading mb-0">
-                                <h3 class="panel-title">Claim Status</h3>
+                                <h3 class="panel-title">Channel wise Claim</h3>
+                                <p class="font-small-3 mb-0">(based on count)</p>
                             </div>
                             <div class="panel-body">
                                 <div id="chartContainer2" style="height: 220px; width: 100%;"></div>
@@ -158,231 +181,291 @@
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <ul class="row clearfix home-tabs nav nav-tabs no-border">
-                                    <li class="col-sm-6 col-md-3"><a class="active" data-toggle="tab" href="#tab1"><i class="icon-user-cancel mr-1"></i> Claims</a></li>
-                                    <li class="col-sm-6 col-md-3"><a data-toggle="tab" href="#tab2"> <i class="icon-history mr-1"></i>Under Review</a></li>
-                                    <li class="col-sm-6 col-md-3"><a data-toggle="tab" href="#tab1"> <i class="icon-users2 mr-1"></i>Payment Due</a></li>
-                                    <li class="col-sm-6 col-md-3"><a data-toggle="tab" href="#tab2"> <i class="icon-pencil5 mr-1"></i> Closed</a></li>
+                                <!-- <ul class="row clearfix home-tabs nav nav-tabs no-border">
+                                    <li class="col-sm-6 col-md-3 col20"><a class="active" data-toggle="tab" href="#tab1"><i class="icon-new-tab2 mr-1"></i> New Claims</a></li>
+                                    <li class="col-sm-6 col-md-3 col20"><a data-toggle="tab" href="#tab2"> <i class="icon-history mr-1"></i>Under Review</a></li>
+                                    <li class="col-sm-6 col-md-3 col20"><a data-toggle="tab" href="#tab1"> <i class="icon-cash mr-1"></i>Payment Due</a></li>
+                                    <li class="col-sm-6 col-md-3 col20"><a data-toggle="tab" href="#tab1"> <i class="icon-user-cancel mr-1"></i>Suspended</a></li>
+                                    <li class="col-sm-6 col-md-3 col20"><a data-toggle="tab" href="#tab2"> <i class="icon-lock mr-1"></i> Closed</a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <div id="tab1" class="tab-pane fade in active">
-
+                                        <div class="table-responsive">
+                                            <table class="table table-striped" id="example2">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Claim Number</th>
+                                                        <th>Client Name</th>
+                                                        <th>Claim Date</th>
+                                                        <th>Product</th>
+                                                        <th>Claim Status</th>
+                                                        <th>Estimate Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><a href="pending-cancellation.html" class="text-semibold">CLMOT0098177</a></td>
+                                                        <td>William Jack</td>
+                                                        <td>09/02/2021</td>
+                                                        <td>Personal Auto</td>
+                                                        <td>Initiated</td>
+                                                        <td>USD 950</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="pending-cancellation.html" class="text-semibold">CLMOT0085619</a></td>
+                                                        <td>Henry Cooper</td>
+                                                        <td>14/02/2021</td>
+                                                        <td>Simplified Travel</td>
+                                                        <td>In Progress</td>
+                                                        <td>USD 1,970</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="pending-cancellation.html" class="text-semibold">CLMOT0090183</a></td>
+                                                        <td>James Thomas</td>
+                                                        <td>30/04/2021</td>
+                                                        <td>Family PA</td>
+                                                        <td>Suspended</td>
+                                                        <td>USD 6,280</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div id="tab2" class="tab-pane fade">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped" id="example2">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Claim Number</th>
+                                                        <th>Client Name</th>
+                                                        <th>Claim Date</th>
+                                                        <th>Product</th>
+                                                        <th>Claim Status</th>
+                                                        <th>Estimate Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><a href="pending-cancellation.html" class="text-semibold">CLMOT0098177</a></td>
+                                                        <td>William Jack</td>
+                                                        <td>09/02/2021</td>
+                                                        <td>Personal Auto</td>
+                                                        <td>Initiated</td>
+                                                        <td>USD 950</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="pending-cancellation.html" class="text-semibold">CLMOT0085619</a></td>
+                                                        <td>Henry Cooper</td>
+                                                        <td>14/02/2021</td>
+                                                        <td>Simplified Travel</td>
+                                                        <td>In Progress</td>
+                                                        <td>USD 1,970</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="pending-cancellation.html" class="text-semibold">CLMOT0090183</a></td>
+                                                        <td>James Thomas</td>
+                                                        <td>30/04/2021</td>
+                                                        <td>Family PA</td>
+                                                        <td>Suspended</td>
+                                                        <td>USD 6,280</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <ul class="row clearfix home-tabs">
+                                    <li class="col-sm-6 col-md-3 col20">
+                                        <input type="checkbox" name="taskType" value="1" id="pt1" ng-model="taskType" checked="">
+                                        <label for="pt1">
+                                            <a><i class="icon-new-tab2 mr-1"></i> New Claims</a>
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-6 col-md-3 col20">
+                                        <input type="checkbox" name="taskType" value="2" id="pt2" ng-model="taskType" checked="">
+                                        <label for="pt2">
+                                            <a><i class="icon-history mr-1"></i>Under Review</a>
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-6 col-md-3 col20">
+                                        <input type="checkbox" name="taskType" value="3" id="pt3" ng-model="taskType">
+                                        <label for="pt3">
+                                            <a><i class="icon-cash mr-1"></i>Payment Due</a>
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-6 col-md-3 col20">
+                                        <input type="checkbox" name="taskType" value="4" id="pt4" ng-model="taskType">
+                                        <label for="pt4">
+                                            <a><i class="icon-user-cancel mr-1"></i>Suspended</a>
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-6 col-md-3 col20">
+                                        <input type="checkbox" name="taskType" value="5" id="pt5" ng-model="taskType">
+                                        <label for="pt5">
+                                            <a><i class="icon-lock mr-1"></i> Closed</a>
+                                        </label>
+                                    </li>
+                                </ul>
                                 <div class="table-responsive">
                                     <table class="table table-striped" id="example2">
                                         <thead>
                                             <tr>
-                                                <th>Policy Number</th>
+                                                <th>Claim Number</th>
                                                 <th>Client Name</th>
+                                                <th>Claim Date</th>
                                                 <th>Product</th>
-                                                <th>Start Date</th>
-                                                <th>End Date</th>
-                                                <th>Amount Due</th>
-                                                <th>Action</th>
+                                                <th>Claim Status</th>
+                                                <th>Estimate Amount</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td><a href="pending-cancellation.html" class="text-semibold">P0905190074</a></td>
+                                            <tr ng-show="taskType == 1">
+                                                <td><a href="3" class="text-semibold">CLMOT0098177</a></td>
                                                 <td>William Jack</td>
-                                                <td>Residental Strata</td>
-                                                <td>01/05/2018</td>
-                                                <td>30/06/2019</td>
-                                                <td>$1254.00</td>
-                                                <td>
-                                                    <ul class="icons-list">
-                                                        <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                                <i class="icon-menu4"></i>
-                                                            </a>
-                                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a href="pending-cancellation.html"><i class="icon-eye pull-right"></i>View </a></li>
-                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </td>
+                                                <td>09/02/2021</td>
+                                                <td>Personal Auto</td>
+                                                <td>Initiated</td>
+                                                <td>USD 950</td>
                                             </tr>
-                                            <tr>
-                                                <td><a href="pending-cancellation.html" class="text-semibold">P0905190074</a></td>
+                                            <tr ng-show="taskType == 1">
+                                                <td><a href="#" class="text-semibold">CLMOT0085619</a></td>
                                                 <td>Henry Cooper</td>
-                                                <td>Commercial Strata</td>
-                                                <td>01/05/2018</td>
-                                                <td>30/06/2019</td>
-                                                <td>$854.50</td>
-                                                <td>
-                                                    <ul class="icons-list">
-                                                        <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                                <i class="icon-menu4"></i>
-                                                            </a>
-                                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a href="pending-cancellation.html"><i class="icon-eye pull-right"></i>View </a></li>
-                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </td>
+                                                <td>14/02/2021</td>
+                                                <td>Simplified Travel</td>
+                                                <td>Initiated</td>
+                                                <td>USD 1,970</td>
                                             </tr>
-                                            <tr>
-                                                <td><a href="pending-cancellation.html" class="text-semibold">P0905190074</a></td>
+                                           <!--  <tr ng-show="taskType == 1">
+                                                <td><a href="#" class="text-semibold">CLMOT0090183</a></td>
                                                 <td>James Thomas</td>
-                                                <td>Residental Strata</td>
-                                                <td>01/05/2018</td>
-                                                <td>30/06/2019</td>
-                                                <td>$1188.00</td>
-                                                <td>
-                                                    <ul class="icons-list">
-                                                        <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                                <i class="icon-menu4"></i>
-                                                            </a>
-                                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a href="pending-cancellation.html"><i class="icon-eye pull-right"></i>View </a></li>
-                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </td>
+                                                <td>30/04/2021</td>
+                                                <td>Family PA</td>
+                                                <td>Initiated</td>
+                                                <td>USD 6,280</td>
+                                            </tr> -->
+                                            <tr ng-show="taskType == 2">
+                                                <td><a href="3" class="text-semibold">CLMOT0098177</a></td>
+                                                <td>William Jack</td>
+                                                <td>09/02/2021</td>
+                                                <td>Personal Auto</td>
+                                                <td>In Progress</td>
+                                                <td>USD 950</td>
                                             </tr>
-                                            <tr>
-                                                <td><a href="view-policy.html" class="text-semibold">P0905190074</a></td>
-                                                <td>Matthew Tyler</td>
-                                                <td>Commercial Strata</td>
-                                                <td>01/06/2018</td>
-                                                <td>30/06/2019</td>
-                                                <td>$1254.00</td>
-                                                <td>
-                                                    <ul class="icons-list">
-                                                        <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                                <i class="icon-menu4"></i>
-                                                            </a>
-                                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a data-toggle="modal" data-target="#activate-broker"><i class="icon-eye pull-right"></i>View </a></li>
-                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </td>
+                                            <tr ng-show="taskType == 2">
+                                                <td><a href="#" class="text-semibold">CLMOT0085619</a></td>
+                                                <td>Henry Cooper</td>
+                                                <td>14/02/2021</td>
+                                                <td>Simplified Travel</td>
+                                                <td>In Progress</td>
+                                                <td>USD 1,970</td>
                                             </tr>
+                                            <!-- <tr ng-show="taskType == 2">
+                                                <td><a href="#" class="text-semibold">CLMOT0090183</a></td>
+                                                <td>James Thomas</td>
+                                                <td>30/04/2021</td>
+                                                <td>Family PA</td>
+                                                <td>In Progress</td>
+                                                <td>USD 6,280</td>
+                                            </tr>
+                                            <tr ng-show="taskType == 3">
+                                                <td><a href="3" class="text-semibold">CLMOT0098177</a></td>
+                                                <td>William Jack</td>
+                                                <td>09/02/2021</td>
+                                                <td>Personal Auto</td>
+                                                <td>Payment Due</td>
+                                                <td>USD 950</td>
+                                            </tr>
+                                            <tr ng-show="taskType == 3">
+                                                <td><a href="#" class="text-semibold">CLMOT0085619</a></td>
+                                                <td>Henry Cooper</td>
+                                                <td>14/02/2021</td>
+                                                <td>Simplified Travel</td>
+                                                <td>Payment Due</td>
+                                                <td>USD 1,970</td>
+                                            </tr>
+                                            <tr ng-show="taskType == 3">
+                                                <td><a href="#" class="text-semibold">CLMOT0090183</a></td>
+                                                <td>James Thomas</td>
+                                                <td>30/04/2021</td>
+                                                <td>Family PA</td>
+                                                <td>Suspended</td>
+                                                <td>USD 6,280</td>
+                                            </tr>
+                                            <tr ng-show="taskType == 4">
+                                                <td><a href="3" class="text-semibold">CLMOT0098177</a></td>
+                                                <td>William Jack</td>
+                                                <td>09/02/2021</td>
+                                                <td>Personal Auto</td>
+                                                <td>Suspended</td>
+                                                <td>USD 950</td>
+                                            </tr>
+                                            <tr ng-show="taskType == 4">
+                                                <td><a href="#" class="text-semibold">CLMOT0085619</a></td>
+                                                <td>Henry Cooper</td>
+                                                <td>14/02/2021</td>
+                                                <td>Simplified Travel</td>
+                                                <td>Suspended</td>
+                                                <td>USD 1,970</td>
+                                            </tr>
+                                            <tr ng-show="taskType == 4">
+                                                <td><a href="#" class="text-semibold">CLMOT0090183</a></td>
+                                                <td>James Thomas</td>
+                                                <td>30/04/2021</td>
+                                                <td>Family PA</td>
+                                                <td>Suspended</td>
+                                                <td>USD 6,280</td>
+                                            </tr>
+                                            <tr ng-show="taskType == 5">
+                                                <td><a href="3" class="text-semibold">CLMOT0098177</a></td>
+                                                <td>William Jack</td>
+                                                <td>09/02/2021</td>
+                                                <td>Personal Auto</td>
+                                                <td>Closed</td>
+                                                <td>USD 950</td>
+                                            </tr>
+                                            <tr ng-show="taskType == 5">
+                                                <td><a href="#" class="text-semibold">CLMOT0085619</a></td>
+                                                <td>Henry Cooper</td>
+                                                <td>14/02/2021</td>
+                                                <td>Simplified Travel</td>
+                                                <td>Closed</td>
+                                                <td>USD 1,970</td>
+                                            </tr>
+                                            <tr ng-show="taskType == 5">
+                                                <td><a href="#" class="text-semibold">CLMOT0090183</a></td>
+                                                <td>James Thomas</td>
+                                                <td>30/04/2021</td>
+                                                <td>Family PA</td>
+                                                <td>Closed</td>
+                                                <td>USD 6,280</td>
+                                            </tr> -->
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-                             <div id="tab2" class="tab-pane fade">
-                                <div class="table-responsive">
-                                    <table class="table table-striped" id="example2">
-                                        <thead>
-                                            <tr>
-                                                <th>Policy Number</th>
-                                                <th>Client Name</th>
-                                                <th>Product</th>
-                                                <th>Start Date</th>
-                                                <th>End Date</th>
-                                                <th>Amount Due</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><a href="pending-cancellation.html" class="text-semibold">P0905190074</a></td>
-                                                <td>William Jack</td>
-                                                <td>Residental Strata</td>
-                                                <td>01/05/2018</td>
-                                                <td>30/06/2019</td>
-                                                <td>$1254.00</td>
-                                                <td>
-                                                    <ul class="icons-list">
-                                                        <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                                <i class="icon-menu4"></i>
-                                                            </a>
-                                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a href="pending-cancellation.html"><i class="icon-eye pull-right"></i>View </a></li>
-                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="pending-cancellation.html" class="text-semibold">P0905190074</a></td>
-                                                <td>Henry Cooper</td>
-                                                <td>Commercial Strata</td>
-                                                <td>01/05/2018</td>
-                                                <td>30/06/2019</td>
-                                                <td>$854.50</td>
-                                                <td>
-                                                    <ul class="icons-list">
-                                                        <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                                <i class="icon-menu4"></i>
-                                                            </a>
-                                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a href="pending-cancellation.html"><i class="icon-eye pull-right"></i>View </a></li>
-                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="pending-cancellation.html" class="text-semibold">P0905190074</a></td>
-                                                <td>James Thomas</td>
-                                                <td>Residental Strata</td>
-                                                <td>01/05/2018</td>
-                                                <td>30/06/2019</td>
-                                                <td>$1188.00</td>
-                                                <td>
-                                                    <ul class="icons-list">
-                                                        <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                                <i class="icon-menu4"></i>
-                                                            </a>
-                                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a href="pending-cancellation.html"><i class="icon-eye pull-right"></i>View </a></li>
-                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="view-policy.html" class="text-semibold">P0905190074</a></td>
-                                                <td>Matthew Tyler</td>
-                                                <td>Commercial Strata</td>
-                                                <td>01/06/2018</td>
-                                                <td>30/06/2019</td>
-                                                <td>$1254.00</td>
-                                                <td>
-                                                    <ul class="icons-list">
-                                                        <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                                <i class="icon-menu4"></i>
-                                                            </a>
-                                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a data-toggle="modal" data-target="#activate-broker"><i class="icon-eye pull-right"></i>View </a></li>
-                                                                <li><a><i class="icon-bin pull-right"></i>Discard</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                             </div>
-                            </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /main content -->
         </div>
-        <!-- /page content -->
+        <!-- /main content -->
+    </div>
+    <!-- /page content -->
     </div>
     <!--************ End Page Container *********-->
+    <!-- <script type="text/javascript">
+    $(document).ready(function() {
+         $('input:checkbox[name="customer2"]').change(function() {
+        if ($(this).val() == 1) {
+            $(".cust-name2").show();
+
+        } else {
+            $(".cust-name2").hide();
+        }
+    });
+
+    });
+    </script> -->
     <script>
     window.onload = function() {};
 
@@ -391,84 +474,119 @@
         animationEnabled: true,
         theme: "light2",
         title: {
-            text: "",
-            fontFamily: "arial black",
-            fontColor: "#695A42"
+            text: ""
         },
         axisX: {
-            interval: 1,
-            intervalType: "month",
-            valueFormatString: "MMM",
-
-
-
-            gridColor: "transparent",
-            labelAngle: -40,
-            titleFontSize: 13,
-            labelFontSize: 11
-        },
-        axisY: {
-            valueFormatString: "#0",
-            gridColor: "transparent",
-            tickColor: ""
-        },
-        axisY: {
-            includeZero: true,
             labelFontSize: 11,
-            prefix: "",
+            // valueFormatString: "MMM"
         },
-
-
-
-        legend: {
-            verticalAlign: "bottom",
-            horizontalAlign: "center",
-            fontSize: 13
+        axisY: {
+            labelFontSize: 11,
+            prefix: "$",
+            // labelFormatter: addSymbols
         },
-
-
-
         toolTip: {
-            shared: true,
-            content: toolTipContent
+            shared: true
         },
-        dataPointMaxWidth: 30,
+        legend: {
+            cursor: "pointer",
+            verticalAlign: "bottom", // "top" , "bottom"
+            horizontalAlign: "center",
+            fontSize: 14,
+        },
         data: [{
-                type: "stackedColumn",
+                type: "column",
+                name: "Reserve",
                 showInLegend: true,
-                color: "#f08321",
-                xValueFormatString: "MMM",
-                name: "Profit",
+                color: "#ffa894",
+                xValueFormatString: "MMMM YYYY",
+                yValueFormatString: "$#,##0",
                 dataPoints: [
-                    { y: 70, x: new Date(2020, 0) },
-                    { y: 50, x: new Date(2020, 1) },
-                    { y: 85, x: new Date(2020, 2) },
-                    { y: 50, x: new Date(2020, 3) },
-                    { y: 85, x: new Date(2020, 4) },
-                    { y: 60, x: new Date(2020, 5) },
-                    { y: 55, x: new Date(2020, 6) }
+                    { x: new Date(2016, 0), y: 20 },
+                    { x: new Date(2016, 1), y: 30 },
+                    { x: new Date(2016, 2), y: 25 },
+                    { x: new Date(2016, 3), y: 70 },
+                    { x: new Date(2016, 4), y: 50 },
+                    { x: new Date(2016, 5), y: 35 },
+                    { x: new Date(2016, 6), y: 30 },
+                    { x: new Date(2016, 7), y: 43 },
+                    { x: new Date(2016, 8), y: 35 },
+                    { x: new Date(2016, 9), y: 30 },
+                    { x: new Date(2016, 10), y: 40 },
+                    { x: new Date(2016, 11), y: 50 }
                 ]
             },
             {
-                type: "stackedColumn",
+                type: "line",
+                name: "Claim Volume",
+                color: "#bf07da",
                 showInLegend: true,
-                name: "Target",
-                xValueFormatString: "MMM",
-                color: "#eef2f5",
-                /*color: "#dc3545",*/
+                yValueFormatString: "$#,##0",
                 dataPoints: [
-                    { y: 80, x: new Date(2020, 0) },
-                    { y: 50, x: new Date(2020, 1) },
-                    { y: 70, x: new Date(2020, 2) },
-                    { y: 60, x: new Date(2020, 3) },
-                    { y: 80, x: new Date(2020, 4) },
-                    { y: 55, x: new Date(2020, 5) },
-                    { y: 70, x: new Date(2020, 6) }
+                    { x: new Date(2016, 0), y: 40 },
+                    { x: new Date(2016, 1), y: 42 },
+                    { x: new Date(2016, 2), y: 45 },
+                    { x: new Date(2016, 3), y: 45 },
+                    { x: new Date(2016, 4), y: 47 },
+                    { x: new Date(2016, 5), y: 43 },
+                    { x: new Date(2016, 6), y: 42 },
+                    { x: new Date(2016, 7), y: 43 },
+                    { x: new Date(2016, 8), y: 41 },
+                    { x: new Date(2016, 9), y: 45 },
+                    { x: new Date(2016, 10), y: 42 },
+                    { x: new Date(2016, 11), y: 50 }
+                ]
+            },
+            {
+                type: "splineArea",
+                name: "Value Paid",
+                markerBorderColor: "#ffc107",
+                color: "#1ea9e1",
+                markerBorderThickness: 2,
+                showInLegend: true,
+                yValueFormatString: "$#,##0",
+                dataPoints: [
+                    { x: new Date(2016, 0), y: 20 },
+                    { x: new Date(2016, 1), y: 30 },
+                    { x: new Date(2016, 2), y: 30 },
+                    { x: new Date(2016, 3), y: 60 },
+                    { x: new Date(2016, 4), y: 20 },
+                    { x: new Date(2016, 5), y: 15 },
+                    { x: new Date(2016, 6), y: 13 },
+                    { x: new Date(2016, 7), y: 20 },
+                    { x: new Date(2016, 8), y: 15 },
+                    { x: new Date(2016, 9), y: 10 },
+                    { x: new Date(2016, 10), y: 19 },
+                    { x: new Date(2016, 11), y: 22 }
+                ]
+            },
+            {
+                type: "scatter",
+                showInLegend: true,
+                name: "Processing Cost",
+                color: "#f9e214",
+                toolTipContent: "<b>Area: </b>{x} sq.ft<br/><b>Price: </b>${y}k",
+                dataPoints: [
+                    { x: new Date(2016, 0), y: 40 },
+                    { x: new Date(2016, 1), y: 30 },
+                    { x: new Date(2016, 2), y: 50 },
+                    { x: new Date(2016, 3), y: 35 },
+                    { x: new Date(2016, 4), y: 25 },
+                    { x: new Date(2016, 5), y: 43 },
+                    { x: new Date(2016, 6), y: 53 },
+                    { x: new Date(2016, 7), y: 40 },
+                    { x: new Date(2016, 8), y: 55 },
+                    { x: new Date(2016, 9), y: 30 },
+                    { x: new Date(2016, 10), y: 20 },
+                    { x: new Date(2016, 11), y: 40 }
                 ]
             }
         ]
     });
     chart1.render();
+
+
+
     var chart2 = new CanvasJS.Chart("chartContainer2", {
         animationEnabled: true,
         title: {
@@ -486,13 +604,12 @@
             innerRadius: 100,
             dataPoints: [
 
-                /*{ y: 1200000, name: "New Claims", color: "#51ad3d", exploded: true },*/
+                { y: 31, name: "Portal", color: "#9bf78b", exploded: true },
 
-                { y: 1200000, name: "New Claims", color: "#f08321", exploded: true },
-                { y: 4500000, name: "Closed Claims", color: "#1ea9e1", exploded: true },
-                /*{ y: 2500000, name: "Renew Claims", color: "#1ea9e1" , exploded: true },*/
-
-
+                { y: 27.5, name: "Chatbot + WhatsApp", color: "#ffa894", exploded: true },
+                { y: 15, name: "Telephone", color: "#ffd25b", exploded: true },
+                { y: 24, name: "Email", color: "#00bebe", exploded: true },
+                { y: 2.5, name: "Branch Visit", color: "#bf07da", exploded: true },
             ]
         }]
     });
@@ -547,6 +664,7 @@
         });
     });
     </script>
+
 </body>
 
 </html>

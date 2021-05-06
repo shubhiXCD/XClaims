@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XClaims</title>
+    <link href="css/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="MyCtrl" class="bg-white">
+    <script type='text/javascript'>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('MyCtrl', function($scope) {
+        $scope.setFile = function(element) {
+            $scope.$apply(function($scope) {
+                $scope.theFile = element.files[0];
+                $scope.sizeDis = false;
+            });
+        };
+    });
+    </script>
+    <!--********* Header Starts *********-->
+    <div class="header">
+        <div class="navbar main-top">
+            <div class="cs-nav">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <div class="mobile-button pull-right">
+                            <a href="javascript:void(0)" class="navbar-toggler sidebar-large" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"><span class="icon"></span></a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-left ml-4">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle legitRipple btn-notification" data-toggle="dropdown">
+                            <i class="icon-bell3"></i>
+                            <span class="position-right"><span class="hide-xs">Notifications</span> <i class="caret"></i> </span>
+                            <span class="badge bg-warning-400">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-content width-350 dropdown-notification">
+                            <ul class="media-list dropdown-content-body">
+                                <li class="media">
+                                    <div class="media-body">
+                                        Quote Number <a href="create-quote-view.html" class="text-semibold">QCH12456</a> expires on 25/05/2019.
+                                        <div class="media-annotation">May 25, 12:47</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Method changed successfully for <a href="view-client.html" class="text-semibold"> Christopher Wallace </a>
+                                        <div class="media-annotation">May 13, 10:25</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        Payment Due on June 16 2016 for Policy Number <a href="view-policy.html" class="text-semibold">POL123456</a>
+                                        <div class="media-annotation"> May 12, 09:37</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-content-footer">
+                                <a href="#" data-popup="tooltip" title="" data-original-title="All Notifications"><i class="icon-menu display-block"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user">
+                        <a class="dropdown-toggle btn btn-primary-outline btn-header" data-toggle="dropdown">
+                            <span>Hi, <span class="hide-xs">Nathan Jacobson</span></span>
+                            <i class="caret"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="login.html"><i class="icon-switch2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--********* End Header *********-->
+    <!--********* Page Container Start *********-->
+    <div class="page-container">
+        <!-- Page content -->
+        <div class="page-content">
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+                    <a class="navbar-brand logo logo-white" href="index.html">
+                        <img src="assets/images/logo.png" class="logo-full">
+                    </a>
+                    <ul class="navigation navigation-main navigation-accordion">
+                        <li><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
+                        <li><a href="#" class="has-ul"><i class="icon-user-tie"></i> <span>Client Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-client.html"><span>Search Client</span></a></li>
+                                <li><a href="add-client.html"><span>Add New Client</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="has-ul"><i class="icon-profile"></i> <span>Claim Management</span></a>
+                            <ul class="hidden-ul">
+                                <li><a href="search-claim.html"><span>Search Claim</span></a></li>
+                                <li><a href="claim.html"><span>Make a Claim</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="search-policy.html"><i class="icon-search4"></i> <span>Search Policy</span></a></li>
+                        <li><a><i class="icon-credit-card"></i> <span>Make a Payment</span></a></li>
+                        <li class="active-page"><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Create New Quote</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper quote">
+                <div class="top-fixed-panel">
+                    <div class="row row-seamless">
+                        <div class="col-sm-12">
+                            <form action="#" class="wizard-circle wizard clearfix">
+                                <div class="steps clearfix">
+                                    <ul role="tablist">
+                                        <li role="tab" class="done"><a href="claim-noti1.html">
+                                                <span class="step"></span> Policy Details </a> </li>
+                                        <li role="tab" class="current"><a href="claim-noti2.html">
+                                                <span class="step"></span> Claim Details </a> </li>
+                                        <li role="tab" class="disabled"><a href="#">
+                                                <span class="step"></span> Claim Reported Details </a> </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <form class="form" action="#">
+                    <div class="content-block">
+                        <div class="row no-pad create-quote">
+                            <div class="col-sm-12">
+                                <div class="question-panel">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">Claim Details </h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row clearfix">
+                                            <div class="form-group col-sm-12 col-lg-6">
+                                                <label class="label-control">Date of Incident<span class="required">*</span> </label>
+                                                <div class="position-relative field-md">
+                                                    <div class="form-group has-feedback has-feedback-left mb-0">
+                                                        <input type="text" class="form-control ui-autocomplete-input" placeholder="DD/MM/YYYY">
+                                                        <div class="form-control-feedback">
+                                                            <i class="icon-calendar text-blue"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12 col-lg-6">
+                                                <label class="label-control">What type of Claim you making </label>
+                                                <select class="form-control field-md">
+                                                    <option selected="" disabled="" hidden="">Select</option>
+                                                    <option>Storm Hail, or water Damage</option>
+                                                    <option>Damage to Structure of Home</option>
+                                                    <option>Personal Belongings Claim</option>
+                                                    <option>Theft & Burglary</option>
+                                                    <option>Liability Claim</option>
+                                                    <option>Living Expenses Claim</option>
+                                                    <option>Fire Damage</option>
+                                                </select>
+                                            </div>
+                                            <div class="row pl-2">
+                                                <div class="form-group col-sm-12 col-lg-6">
+                                                    <label class="label-control">Damage Description</label>
+                                                    <input type="text" class="form-control field-md" value="">
+                                                </div>
+                                                <div class="form-group col-sm-12 col-lg-6">
+                                                    <label class="label-control">Cause of Loss</label>
+                                                    <input type="text" class="form-control field-md" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12 col-lg-6">
+                                                <label class="label-control">Occupants details at the time of incident</label>
+                                                <textarea class="form-control field-lg" rows="3"></textarea>
+                                            </div>
+                                            <div class="form-group col-sm-12 col-lg-6">
+                                                <label class="label-control">Incident Location</label>
+                                                <textarea class="form-control field-lg" rows="3"></textarea>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Do we have claim documents to upload?</label>
+                                                <div class="radio-toggle mb-2">
+                                                    <div class="btn-radio">
+                                                        <input type="radio" name="1" id="2" ng-model="claim" ng-value="false">
+                                                        <label for="2"> No</label>
+                                                    </div>
+                                                    <div class="btn-radio">
+                                                        <input type="radio" name="1" id="3" ng-model="claim" ng-value="true">
+                                                        <label for="3">Yes</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-sm-12" ng-show="claim">
+                                                    <div class="sub-questions form-group">
+                                                        <div class="form-group">
+                                                            <label class="label-control">Upload Claims Documents</label>
+                                                            <div class="file-upload btn btn-primary"> <span>
+                                                                    <i class="icon-file-upload"></i>
+                                                                    Upload</span>
+                                                                <input class="upload" type="file">
+                                                            </div>
+                                                        </div>
+                                                        <div class="scrollbar-inner">
+                                                            <table class="table table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>SNo.</th>
+                                                                        <th>Document Name</th>
+                                                                        <th>Action</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>SNO125</td>
+                                                                        <td><a href="#" class="text-semibold"><i class="icon-file-pdf "></i>Document Name 1</a></td>
+                                                                        <td><a href="#" class="btn btn-sm btn-danger"><i class="icon-bin text-white"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                         <td>SNO123</td>
+                                                                        <td><a href="#" class="text-semibold"><i class="icon-file-pdf"></i>Document Name 2</a></td>
+                                                                        <td><a href="#" class="btn btn-sm btn-danger"><i class="icon-bin text-white"></i></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="label-control">Are you registered for GST ?</label>
+                                                <div class="radio-toggle">
+                                                    <div class="btn-radio">
+                                                        <input type="radio" name="01" id="02" ng-model="gst" ng-value="false">
+                                                        <label for="02"> No</label>
+                                                    </div>
+                                                    <div class="btn-radio">
+                                                        <input type="radio" name="01" id="03" ng-model="gst" ng-value="true">
+                                                        <label for="03">Yes</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-sm-12" ng-show="gst">
+                                                    <div class="form-group sub-questions">
+                                                        <label class="label-control">What is your ABN? </label>
+                                                        <input type="text" class="form-control field-md" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row quote-btn-group ">
+                                    <div class="col-xs-6 ">
+                                        <a href="claim-noti1.html" class="btn btn-grey-outline"> <i class="icon-arrow-left7 mr-1 "></i> <span>Previous</span> </a>
+                                    </div>
+                                    <div class="col-xs-6 text-right ">
+                                        <a href="claim-noti3.html" class="btn btn-primary "> Next <i class="icon-arrow-right7 mr-1 "></i> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- /main content -->
+            </div>
+            <!-- /page content -->
+        </div>
+        <!--************ End Page Container *********-->
+</body>
+
+</html>

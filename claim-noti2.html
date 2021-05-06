@@ -100,22 +100,12 @@
                         <img src="assets/images/logo.png" class="logo-full">
                     </a>
                     <ul class="navigation navigation-main navigation-accordion">
-                        <li><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
-                        <li><a href="#" class="has-ul"><i class="icon-user-tie"></i> <span>Client Management</span></a>
-                            <ul class="hidden-ul">
-                                <li><a href="search-client.html"><span>Search Client</span></a></li>
-                                <li><a href="add-client.html"><span>Add New Client</span></a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" class="has-ul"><i class="icon-profile"></i> <span>Claim Management</span></a>
-                            <ul class="hidden-ul">
-                                <li><a href="search-claim.html"><span>Search Claim</span></a></li>
-                                <li><a href="claim.html"><span>Make a Claim</span></a></li>
-                            </ul>
-                        </li>
-                        <li><a href="search-policy.html"><i class="icon-search4"></i> <span>Search Policy</span></a></li>
-                        <li><a><i class="icon-credit-card"></i> <span>Make a Payment</span></a></li>
-                        <li class="active-page"><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Create New Quote</span></a></li>
+                        <li ><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
+                        <li class="active-page"><a href="claim-noti.html"><i class="icon-profile"></i> <span>Claim Notification</span></a></li>
+                        <!-- <li><a href="search-policy.html"><i class="icon-file-text"></i> <span>Claim Recovery</span></a></li> -->
+                        <li><a href="claim-enquiry.html"><i class="icon-clipboard"></i> <span>Claim Enquiry</span></a></li>
+                        <!-- <li><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Policy Enquiry</span></a></li> -->
+                        <li><a href="worklist.html"><i class="icon-credit-card"></i> <span>Claim Billing</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -215,7 +205,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="scrollbar-inner">
-                                                            <table class="table table-striped">
+                                                            <table class="table table-striped table-blue">
                                                                 <thead>
                                                                     <tr>
                                                                         <th>SNo.</th>
@@ -227,12 +217,12 @@
                                                                     <tr>
                                                                         <td>SNO125</td>
                                                                         <td><a href="#" class="text-semibold"><i class="icon-file-pdf "></i>Document Name 1</a></td>
-                                                                        <td><a href="#" class="btn btn-sm btn-danger"><i class="icon-bin text-white"></i></a></td>
+                                                                        <td><a href="#" title="Delete" class="text-danger"><i class="icon-bin"></i></a></td>
                                                                     </tr>
                                                                     <tr>
                                                                          <td>SNO123</td>
-                                                                        <td><a href="#" class="text-semibold"><i class="icon-file-pdf"></i>Document Name 2</a></td>
-                                                                        <td><a href="#" class="btn btn-sm btn-danger"><i class="icon-bin text-white"></i></a></td>
+                                                                        <td><a href="#"  class="text-semibold"><i class="icon-file-pdf"></i>Document Name 2</a></td>
+                                                                        <td><a href="#" title="Delete" class="text-danger"><i class="icon-bin"></i></a></td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>

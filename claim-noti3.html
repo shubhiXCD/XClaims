@@ -100,22 +100,12 @@
                         <img src="assets/images/logo.png" class="logo-full">
                     </a>
                     <ul class="navigation navigation-main navigation-accordion">
-                        <li><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
-                        <li><a href="#" class="has-ul"><i class="icon-user-tie"></i> <span>Client Management</span></a>
-                            <ul class="hidden-ul">
-                                <li><a href="search-client.html"><span>Search Client</span></a></li>
-                                <li><a href="add-client.html"><span>Add New Client</span></a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" class="has-ul"><i class="icon-profile"></i> <span>Claim Management</span></a>
-                            <ul class="hidden-ul">
-                                <li><a href="search-claim.html"><span>Search Claim</span></a></li>
-                                <li><a href="claim.html"><span>Make a Claim</span></a></li>
-                            </ul>
-                        </li>
-                        <li><a href="search-policy.html"><i class="icon-search4"></i> <span>Search Policy</span></a></li>
-                        <li><a><i class="icon-credit-card"></i> <span>Make a Payment</span></a></li>
-                        <li class="active-page"><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Create New Quote</span></a></li>
+                        <li ><a href="index.html"><i class=" icon-home8"></i> <span>Dashboard</span></a></li>
+                        <li class="active-page"><a href="claim-noti.html"><i class="icon-profile"></i> <span>Claim Notification</span></a></li>
+                        <!-- <li><a href="search-policy.html"><i class="icon-file-text"></i> <span>Claim Recovery</span></a></li> -->
+                        <li><a href="claim-enquiry.html"><i class="icon-clipboard"></i> <span>Claim Enquiry</span></a></li>
+                        <!-- <li><a href="create-quote.html"><i class="icon-clipboard2"></i> <span>Policy Enquiry</span></a></li> -->
+                        <li><a href="worklist.html"><i class="icon-credit-card"></i> <span>Claim Billing</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -130,9 +120,9 @@
                                     <ul role="tablist">
                                         <li role="tab" class="done"><a href="claim-noti1.html">
                                                 <span class="step"></span> Policy Details </a> </li>
-                                        <li role="tab" class="current"><a href="claim-noti2.html">
+                                        <li role="tab" class="done"><a href="claim-noti2.html">
                                                 <span class="step"></span> Claim Details </a> </li>
-                                        <li role="tab" class="disabled"><a href="#">
+                                        <li role="tab" class="current"><a href="claim-noti3.html">
                                                 <span class="step"></span> Claim Reported Details </a> </li>
                                     </ul>
                                 </div>
@@ -146,27 +136,20 @@
                             <div class="col-sm-12">
                                 <div class="question-panel">
                                     <div class="panel-heading">
-                                        <h5 class="panel-title">Claim Details </h5>
+                                        <h5 class="panel-title">Claim Reported Details </h5>
                                     </div>
                                     <div class="panel-body">
                                         <div class="row clearfix">
-                                            <div class="form-group col-sm-12 col-lg-5">
-                                                <label class="label-control">Date of Incident<span class="required">*</span> </label>
-                                                <div class="position-relative field-md">
-                                                    <div class="form-group has-feedback has-feedback-left mb-0">
-                                                        <input type="text" class="form-control ui-autocomplete-input" placeholder="DD/MM/YYYY">
-                                                        <div class="form-control-feedback">
-                                                            <i class="icon-calendar text-blue"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="form-group col-sm-12 col-lg-6">
+                                                <label class="label-control">Claim Reported By</label>
+                                                <input type="text" class="form-control field-md" value="">
                                             </div>
-                                            <div class="form-group col-sm-12 col-lg-5">
-                                                <label class="label-control">What type of Claim you making </label>
+                                            <div class="form-group col-sm-12 col-lg-6">
+                                                <label class="label-control">Relation to Insured</label>
                                                 <select class="form-control field-md">
                                                     <option selected="" disabled="" hidden="">Select</option>
-                                                    <option>Storm Hail, or water Damage</option>
-                                                    <option>Damage to Structure of Home</option>
+                                                    <option>Self</option>
+                                                    <option>Driver</option>
                                                     <option>Personal Belongings Claim</option>
                                                     <option>Theft & Burglary</option>
                                                     <option>Liability Claim</option>
@@ -174,102 +157,54 @@
                                                     <option>Fire Damage</option>
                                                 </select>
                                             </div>
-                                            <div class="row pl-2">
-                                                <div class="form-group col-sm-12 col-lg-5">
-                                                    <label class="label-control">Damage Description</label>
-                                                    <input type="text" class="form-control field-md" value="">
-                                                </div>
-                                                <div class="form-group col-sm-12 col-lg-5">
-                                                    <label class="label-control">Cause of Loss</label>
-                                                    <input type="text" class="form-control field-md" value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-sm-12">
-                                                <label class="label-control">Occupants details at the time of incident</label>
-                                                <textarea class="form-control field-lg" rows="3"></textarea>
-                                            </div>
-                                            <div class="form-group col-sm-12">
-                                                <label class="label-control">Incident Location</label>
-                                                <textarea class="form-control field-lg" rows="3"></textarea>
-                                            </div>
-                                            <div class="form-group col-sm-12">
-                                                <label class="label-control">Do we have claim documents to upload?</label>
-                                                <div class="radio-toggle mb-2">
-                                                    <div class="btn-radio">
-                                                        <input type="radio" name="1" id="2" ng-model="claim" ng-value="false">
-                                                        <label for="2"> No</label>
-                                                    </div>
-                                                    <div class="btn-radio">
-                                                        <input type="radio" name="1" id="3" ng-model="claim" ng-value="true">
-                                                        <label for="3">Yes</label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-sm-12" ng-show="claim">
-                                                    <div class="sub-questions form-group">
-                                                        <div class="form-group">
-                                                            <label class="label-control">Upload Claims Documents</label>
-                                                            <div class="file-upload btn btn-primary"> <span>
-                                                                    <i class="icon-file-upload"></i>
-                                                                    Upload</span>
-                                                                <input class="upload" type="file">
+                                            
+                                                <div class="form-group col-sm-12 col-lg-6">
+                                                    <label class="label-control">Date of Notice</label>
+                                                    <div class="position-relative field-md">
+                                                        <div class="form-group has-feedback has-feedback-left mb-0">
+                                                            <input type="text" class="form-control ui-autocomplete-input" placeholder="DD/MM/YYYY">
+                                                            <div class="form-control-feedback">
+                                                                <i class="icon-calendar text-blue"></i>
                                                             </div>
                                                         </div>
-                                                        <div class="scrollbar-inner">
-                                                            <table class="table table-striped">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>SNo.</th>
-                                                                        <th>Document Name</th>
-                                                                        <th>Action</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>SNO125</td>
-                                                                        <td><a href="#" class="text-semibold"><i class="icon-file-pdf "></i>Document Name 1</a></td>
-                                                                        <td><a href="#" class="btn btn-sm btn-danger"><i class="icon-bin text-white"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                         <td>SNO123</td>
-                                                                        <td><a href="#" class="text-semibold"><i class="icon-file-pdf"></i>Document Name 2</a></td>
-                                                                        <td><a href="#" class="btn btn-sm btn-danger"><i class="icon-bin text-white"></i></a></td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
                                                     </div>
                                                 </div>
+                                                <div class="form-group col-sm-12 col-lg-6">
+                                                    <label class="label-control">Mode of Reporting</label>
+                                                    <select class="form-control field-md">
+                                                        <option selected="" disabled="" hidden="">Select</option>
+                                                        <option>Self</option>
+                                                        <option>Driver</option>
+                                                        <option>Personal Belongings Claim</option>
+                                                        <option>Theft & Burglary</option>
+                                                        <option>Liability Claim</option>
+                                                        <option>Living Expenses Claim</option>
+                                                        <option>Fire Damage</option>
+                                                    </select>
+                                                </div>
+                                           
+                                            <div class="form-group col-sm-12 col-lg-6">
+                                                <label class="label-control">Contact Email</label>
+                                                <input type="text" class="form-control field-md" value="">
                                             </div>
-                                            <div class="form-group col-sm-12">
-                                                <label class="label-control">Are you registered for GST ?</label>
-                                                <div class="radio-toggle">
-                                                    <div class="btn-radio">
-                                                        <input type="radio" name="01" id="02" ng-model="gst" ng-value="false">
-                                                        <label for="02"> No</label>
-                                                    </div>
-                                                    <div class="btn-radio">
-                                                        <input type="radio" name="01" id="03" ng-model="gst" ng-value="true">
-                                                        <label for="03">Yes</label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-sm-12" ng-show="gst">
-                                                    <div class="form-group sub-questions">
-                                                        <label class="label-control">What is your ABN? </label>
-                                                        <input type="text" class="form-control field-md" value="">
-                                                    </div>
-                                                </div>
+                                            <div class="form-group col-sm-12 col-lg-6">
+                                                <label class="label-control">Contact Phone</label>
+                                                <input type="text" class="form-control field-md" value="">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="alert alert-success alert-styled-left">
+                                    <button type="button" class="close" data-dismiss="alert"><span>×</span><span class="sr-only">Close</span></button>
+                                    <span class="text-semibold">Your Claim has been successfully created with us. <br>We would notify you further on the proceedings. Claim reference number <a  href ="#"class="text-bold">CLHOM91872</a> will be referred for further communications.</span>
+                                </div>
                                 <div class="row quote-btn-group ">
                                     <div class="col-xs-6 ">
-                                        <a href="claim-noti2.html" class="btn btn-grey-outline"> <i class="icon-arrow-left7 mr-1 "></i> <span>Previous</span> </a>
+                                        <a href="claim-noti2.html" class="btn btn-grey-outline mr-1"> <i class="icon-floppy-disk mr-1 "></i> <span>Save</span> </a>
+                                        <a href="confirm-claim.html" class="btn btn-grey-outline "> <i class="icon-cross"></i> Abandon</a>
                                     </div>
-                                    <div class="col-xs-6 text-right ">
-                                         <a href="confirm-claim.html" class="btn btn-grey-outline "> <i class="icon-cross"></i>  Abandon</a>
-                                        <a href="confirm-claim.html" class="btn btn-primary ">Save<i class="icon-arrow-right7 mr-1 "></i> </a>
-                                       
+                                    <div class="col-xs-6 text-right "> 
+                                        <a href="#" class="btn btn-primary"  data-toggle="modal" data-target="#success"> <i class="icon-check mr-1"></i>Submit</a>
                                     </div>
                                 </div>
                             </div>
@@ -281,6 +216,19 @@
             <!-- /page content -->
         </div>
         <!--************ End Page Container *********-->
+        <div id="success" class="modal fade moda-md">
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="alert-success-center text-center">
+                                    <a href="#" class="icon"><i class="icon-checkmark3"></i></a>
+                                    <p class="text-semibold mb-4 font-large-2">Your Claim has been successfully created with us. We would notify you further on the proceedings. Claim reference number <a  href ="#"class="text-bold">CLHOM91872</a> will be referred for further communications.</p>
+                                    <a href="index.html" class="btn btn-success btn-shadow-1">OK</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 </body>
 
 </html>

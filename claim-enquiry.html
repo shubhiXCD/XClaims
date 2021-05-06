@@ -31,7 +31,7 @@
     });
     </script>
     <!--********* Header Starts *********-->
-     <div class="header">
+    <div class="header">
         <div class="navbar main-top">
             <div class="cs-nav">
                 <ul class="nav navbar-nav">
@@ -113,58 +113,55 @@
             <!-- /main sidebar -->
             <!-- Main content -->
             <div class="content-wrapper">
-              <div class="page-title">
-                  <ul class="breadcrumb breadcrumb-caret">
-                      <li>Claim Enquiry</li>
-                  </ul>
-              </div>
+                <div class="page-title">
+                    <ul class="breadcrumb breadcrumb-caret">
+                        <li>Claim Enquiry</li>
+                    </ul>
+                </div>
                 <div class="panel">
                     <div class="panel-body">
                         <div class="row clearfix">
                             <div class="form-group col-sm-6">
                                 <label class="label-control">Claim Number</label>
-                                <input type="text" class="form-control" value="CLHOM0002768">
+                                <input type="text" class="form-control field-md" value="CLHOM0002768">
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="label-control">Policy Number</label>
-                                <input type="text" class="form-control" value="">
+                                <input type="text" class="form-control field-md" value="">
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="form-group col-sm-6">
-                                <label class="label-control">Claim Date</label>
-                                <div class="row">
-                                  <div class="position-relative field-md col-sm-6">
-                                      <div class="form-group has-feedback has-feedback-left field-sm">
-                                          <input type="text" class="form-control" placeholder="DD/MM/YYYY">
-                                          <div class="form-control-feedback">
-                                              <i class="icon-calendar text-blue"></i>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="position-relative field-md col-sm-6">
-                                      <div class="form-group has-feedback has-feedback-left field-sm">
-                                          <input type="text" class="form-control" placeholder="DD/MM/YYYY">
-                                          <div class="form-control-feedback">
-                                              <i class="icon-calendar text-blue"></i>
-                                          </div>
-                                      </div>
-                                  </div>
+                                <label class="label-control">Claim Start Date</label>
+                                <div class="position-relative">
+                                    <div class="form-group has-feedback has-feedback-left field-md">
+                                        <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                        <div class="form-control-feedback">
+                                            <i class="icon-calendar text-blue"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="label-control">Claim End Date</label>
+                                <div class="position-relative">
+                                    <div class="form-group has-feedback has-feedback-left field-md">
+                                        <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                        <div class="form-control-feedback">
+                                            <i class="icon-calendar text-blue"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="label-control">Client Name</label>
-                                <input type="text" class="form-control" value="Anthony Lewis">
+                                <input type="text" class="form-control field-md" value="Anthony Lewis">
                             </div>
-                        </div>
-                        <div class="row clearfix">
                             <div class="form-group col-sm-6">
                                 <label class="label-control">Product</label>
-                                <input type="text" class="form-control" value="Homeowners">
+                                <input type="text" class="form-control field-md" value="Homeowners">
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="label-control">Claim Type</label>
-                                <select class="form-control">
+                                <select class="form-control field-md">
                                     <option disabled="" selected="" hidden="" value="Select">Select</option>
                                     <option value="Owner">Owner</option>
                                     <option value="Tenant">Tenant</option>
@@ -172,15 +169,13 @@
                                     <option value="Others">Others</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="row clearfix">
                             <div class="form-group col-sm-6">
                                 <label class="label-control">Claim Status</label>
-                                <input type="text" class="form-control" value="Assessment">
+                                <input type="text" class="form-control field-md" value="Assessment">
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="label-control">Assigned To</label>
-                                <select class="form-control">
+                                <select class="form-control field-md">
                                     <option disabled="" selected="" hidden="" value="Select">Select</option>
                                     <option value="Owner">George T</option>
                                     <option value="Tenant">Andy van</option>
@@ -189,89 +184,86 @@
                                 </select>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
-
-                <div class="form-group text-right">
-                    <a href="javascript:void(0);" class="btn btn-grey-outline btn-reset"> <i class="icon-reset font-medium-3 mr-1"></i> Reset </a>
-                    <a href="javascript:void(0);" class="btn btn-primary btn-search"> <i class="icon-search4 mr-half font-medium-1"></i> Search</a>
-                </div>
-                <div class="mt-8 search-result-table mb-8" style="display: none;">
-                    <div class="table-responsive">
-                        <table class="table table-striped" id="example">
-                            <thead>
-                                <tr>
-                                    <th>Claim Number</th>
-                                    <th>Client Name</th>
-                                    <th>Product</th>
-                                    <th>Claim Date</th>
-                                    <th>Claim Stage</th>
-                                    <th>Current Assignee</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><a href="claim-noti1.html" class="text-semibold">CLHOM0002768</a></td>
-                                    <td>Anthony Lewis</td>
-                                    <td>Homeowners</td>
-                                    <td>17/04/2021</td>
-                                    <td>Assessment</td>
-                                    <td>George T</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="form-group text-right">
+                        <a href="javascript:void(0);" class="btn btn-grey-outline btn-reset"> <i class="icon-reset font-medium-3 mr-1"></i> Reset </a>
+                        <a href="javascript:void(0);" class="btn btn-primary btn-search"> <i class="icon-search4 mr-half font-medium-1"></i> Search</a>
                     </div>
+                    <div class="mt-8 search-result-table mb-8" style="display: none;">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="example">
+                                <thead>
+                                    <tr>
+                                        <th>Claim Number</th>
+                                        <th>Client Name</th>
+                                        <th>Product</th>
+                                        <th>Claim Date</th>
+                                        <th>Claim Stage</th>
+                                        <th>Current Assignee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="claim-noti1.html" class="text-semibold">CLHOM0002768</a></td>
+                                        <td>Anthony Lewis</td>
+                                        <td>Homeowners</td>
+                                        <td>17/04/2021</td>
+                                        <td>Assessment</td>
+                                        <td>George T</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    </form>
                 </div>
-                </form>
-            </div>
-            <script>
+                <script>
                 $(".btn-search").click(function() {
-                $(".search-result-table").css("display", "block");
-                window.scrollTo(0, 500);
-            });
-            $(".btn-reset").click(function() {
-                $(".search-result-table").css("display", "none");
-            });
-            </script>
-            <script>
-            $(function() {
-                $('#example').dataTable({
-                    "bPaginate": false,
-                    "bAutoWidth": false,
-                    "bFilter": false,
-                    "sPaginationType": "full_numbers",
-
-                    "bInfo": false,
-                    language: {
-                        paginate: {
-                            next: '<i class="icon-arrow-right5"></i>',
-                            first: '<i class="icon-previous2"></i>',
-                            last: '<i class="icon-next2"></i>',
-                            previous: '<i class="icon-arrow-left5"></i>'
-                        }
-                    },
-                    "lengthMenu": [
-                        [3, 6, 9, -1],
-                        [3, 6, 6, "All"]
-                    ]
+                    $(".search-result-table").css("display", "block");
+                    window.scrollTo(0, 500);
                 });
-            });
-            </script>
-            <script>
-            $(function($) {
-                var options = {
-                    minimum: 1,
-                    maximize: 100,
-                }
-                $('.handle-counter').handleCounter(options)
-            })
-            </script>
+                $(".btn-reset").click(function() {
+                    $(".search-result-table").css("display", "none");
+                });
+                </script>
+                <script>
+                $(function() {
+                    $('#example').dataTable({
+                        "bPaginate": false,
+                        "bAutoWidth": false,
+                        "bFilter": false,
+                        "sPaginationType": "full_numbers",
+
+                        "bInfo": false,
+                        language: {
+                            paginate: {
+                                next: '<i class="icon-arrow-right5"></i>',
+                                first: '<i class="icon-previous2"></i>',
+                                last: '<i class="icon-next2"></i>',
+                                previous: '<i class="icon-arrow-left5"></i>'
+                            }
+                        },
+                        "lengthMenu": [
+                            [3, 6, 9, -1],
+                            [3, 6, 6, "All"]
+                        ]
+                    });
+                });
+                </script>
+                <script>
+                $(function($) {
+                    var options = {
+                        minimum: 1,
+                        maximize: 100,
+                    }
+                    $('.handle-counter').handleCounter(options)
+                })
+                </script>
+            </div>
+            <!-- /main content -->
         </div>
-        <!-- /main content -->
-    </div>
-    <!-- /page content -->
+        <!-- /page content -->
     </div>
     <!--************ End Page Container *********-->
 </body>

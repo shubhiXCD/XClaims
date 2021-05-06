@@ -153,20 +153,44 @@
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="label-control">Client Name</label>
-                                <input type="text" class="form-control field-md" value="Anthony Lewis">
+                                <div class="position-relative">
+                                    <div class="form-group has-feedback has-feedback-left field-md">
+                                        <input type="text" class="form-control" placeholder="">
+                                        <div class="form-control-feedback">
+                                            <i class="icon-search4 text-blue"></i>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="label-control">Product</label>
-                                <input type="text" class="form-control field-md" value="Homeowners">
+                                 <select class="form-control field-md" ng-model="product">
+                                    <option disabled="" selected="" hidden="" value="Select">Select</option>
+                                    <option value="home">Home</option>
+                                    <option value="auto">Auto</option>
+                                </select>
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="label-control">Claim Type</label>
-                                <select class="form-control field-md">
+                                <select class="form-control field-md" ng-show="product == 'home'">
+                                                    <option selected="" disabled="" hidden="">Select</option>
+                                                    <option>Storm Hail, or water Damage</option>
+                                                    <option>Damage to Structure of Home</option>
+                                                    <option>Personal Belongings Claim</option>
+                                                    <option>Theft & Burglary</option>
+                                                    <option>Liability Claim</option>
+                                                    <option>Living Expenses Claim</option>
+                                                    <option>Fire Damage</option>
+                                                </select> 
+                                <select class="form-control field-md" ng-show="product == 'auto'">
                                     <option disabled="" selected="" hidden="" value="Select">Select</option>
                                     <option value="Owner">Owner</option>
                                     <option value="Tenant">Tenant</option>
                                     <option value="Agent">Agent</option>
                                     <option value="Others">Others</option>
+                                </select>
+                                <select class="form-control field-md" ng-hide="product">
+                                    <option disabled="" selected="" hidden="" value="Select">Select</option>
                                 </select>
                             </div>
                             <div class="form-group col-sm-6">
@@ -192,7 +216,7 @@
                     </div>
                     <div class="mt-8 search-result-table mb-8" style="display: none;">
                         <div class="table-responsive">
-                            <table class="table table-striped" id="example">
+                            <table class="table table-striped" >
                                 <thead>
                                     <tr>
                                         <th>Claim Number</th>
@@ -201,6 +225,7 @@
                                         <th>Claim Date</th>
                                         <th>Claim Stage</th>
                                         <th>Current Assignee</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -211,6 +236,20 @@
                                         <td>17/04/2021</td>
                                         <td>Assessment</td>
                                         <td>George T</td>
+                                        <td>
+                                            <ul class="icons-list">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="icon-menu4"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                   <li><a href="#"><i class="icon-eye pull-right"></i>View</a></li>
+                                                    <li><a href="#"><i class="icon-enter pull-right"></i>Delegate</a></li>
+                                                    
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
